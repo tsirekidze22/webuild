@@ -1,3 +1,4 @@
+// app\[locale]\page.tsx
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Examples from "@/components/Examples";

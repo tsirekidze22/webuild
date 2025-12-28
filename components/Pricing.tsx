@@ -1,6 +1,19 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 export default function Pricing() {
+  const t = useTranslations("pricing");
+
+  const features = [
+    t("pricing-f1"),
+    t("pricing-f2"),
+    t("pricing-f3"),
+    t("pricing-f4"),
+    t("pricing-f5"),
+    t("pricing-f6"),
+  ];
+
   return (
     <section id="pricing" className="relative py-24 bg-white overflow-hidden">
       {/* Animated background */}
@@ -25,30 +38,27 @@ export default function Pricing() {
               />
             </svg>
             <span className="text-sm font-semibold text-green-700">
-              Transparent Pricing
+              {t("pricing-badge")}
             </span>
           </div>
 
           <h2 className="text-5xl lg:text-6xl font-bold mb-6">
             <span className="bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
-              Simple, Clear Pricing
+              {t("pricing-title")}
             </span>
           </h2>
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            One fixed price. No hidden fees. No surprises. Know exactly what
-            you&apos;re paying before we start.
+            {t("pricing-subtitle")}
           </p>
         </div>
 
         {/* Pricing card */}
         <div className="max-w-4xl mx-auto">
           <div className="relative group">
-            {/* Glow effect */}
             <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 rounded-3xl blur-xl opacity-25 group-hover:opacity-40 transition-opacity duration-500"></div>
 
             <div className="relative bg-white rounded-3xl shadow-2xl border-2 border-blue-100 overflow-hidden">
-              {/* Top banner */}
               <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-8 py-4 flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
@@ -61,42 +71,33 @@ export default function Pricing() {
                     </svg>
                   </div>
                   <span className="text-white font-bold text-lg">
-                    Standard Package
+                    {t("pricing-package-name")}
                   </span>
                 </div>
                 <div className="px-4 py-1 bg-white/20 backdrop-blur-sm rounded-full">
                   <span className="text-white text-sm font-semibold">
-                    Most Popular
+                    {t("pricing-popular")}
                   </span>
                 </div>
               </div>
 
               <div className="p-10 lg:p-12">
-                {/* Price */}
                 <div className="text-center mb-10">
                   <div className="flex items-end justify-center gap-2 mb-3">
                     <span className="text-6xl lg:text-7xl font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">
                       600
                     </span>
                     <span className="text-4xl font-bold text-gray-400 mb-2">
-                      ₾
+                      {t("pricing-currency")}
                     </span>
                   </div>
                   <p className="text-gray-600 text-lg">
-                    One-time payment • No monthly fees
+                    {t("pricing-payment-term")}
                   </p>
                 </div>
 
-                {/* Features list */}
                 <div className="grid md:grid-cols-2 gap-4 mb-10">
-                  {[
-                    "Complete one-page website",
-                    "Mobile responsive design",
-                    "WhatsApp & call buttons",
-                    "Basic SEO included",
-                    "Deployed to your hosting",
-                    "Delivered in ~7 days",
-                  ].map((feature, idx) => (
+                  {features.map((feature, idx) => (
                     <div
                       key={idx}
                       className="flex items-start gap-3 group/item"
@@ -121,13 +122,12 @@ export default function Pricing() {
                   ))}
                 </div>
 
-                {/* CTA Button */}
                 <a
                   href="#contact"
                   className="group/btn relative block w-full py-5 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-2xl font-bold text-lg text-center overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-blue-600/50 hover:scale-105"
                 >
                   <span className="relative z-10 flex items-center justify-center gap-2">
-                    Get Started Now
+                    {t("pricing-cta")}
                     <svg
                       className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform"
                       fill="none"
@@ -142,11 +142,9 @@ export default function Pricing() {
                       />
                     </svg>
                   </span>
-                  {/* Animated background */}
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-800 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300"></div>
                 </a>
 
-                {/* Guarantee badge */}
                 <div className="mt-8 flex items-center justify-center gap-2 text-sm text-gray-600">
                   <svg
                     className="w-5 h-5 text-green-600"
@@ -159,23 +157,20 @@ export default function Pricing() {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <span className="font-medium">
-                    100% satisfaction guarantee
-                  </span>
+                  <span className="font-medium">{t("pricing-guarantee")}</span>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Custom pricing note */}
           <div className="mt-12 text-center">
             <p className="text-gray-600 text-lg">
-              Need multiple pages or custom features?{" "}
+              {t("pricing-custom-note")}{" "}
               <a
                 href="#contact"
                 className="text-blue-600 hover:text-blue-700 font-bold underline decoration-2 underline-offset-4 transition-colors"
               >
-                Contact us for a custom quote
+                {t("pricing-custom-link")}
               </a>
             </p>
           </div>

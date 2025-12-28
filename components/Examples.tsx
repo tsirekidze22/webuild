@@ -1,40 +1,43 @@
+"use client";
+
+import { useTranslations } from "next-intl";
+
 export default function Examples() {
+  const t = useTranslations("examples");
+
   const examples = [
     {
       id: 1,
-      title: "Home Repair Service",
-      description:
-        "Modern one-page site showcasing services, portfolio, and instant contact options.",
+      title: t("examples-repair-title"),
+      description: t("examples-repair-desc"),
       features: [
-        "Mobile-friendly design",
-        "WhatsApp & Call buttons",
-        "Service gallery with photos",
+        t("examples-repair-f1"),
+        t("examples-repair-f2"),
+        t("examples-repair-f3"),
       ],
-      previewImage: "/demos/repair-preview.jpg", // Replace with actual path
+      previewImage: "/demos/repair-preview.jpg",
     },
     {
       id: 2,
-      title: "Plumbing & Electrical",
-      description:
-        "Clear website showing services, before/after projects, and easy customer contact.",
+      title: t("examples-plumbing-title"),
+      description: t("examples-plumbing-desc"),
       features: [
-        "Service overview",
-        "Before/after gallery",
-        "Call & WhatsApp buttons",
+        t("examples-plumbing-f1"),
+        t("examples-plumbing-f2"),
+        t("examples-plumbing-f3"),
       ],
-      previewImage: "/demos/plumbing-preview.jpg", // Replace with actual path
+      previewImage: "/demos/plumbing-preview.jpg",
     },
     {
       id: 3,
-      title: "Cleaning Service",
-      description:
-        "Professional design highlighting packages, testimonials, and direct contact.",
+      title: t("examples-cleaning-title"),
+      description: t("examples-cleaning-desc"),
       features: [
-        "Service packages",
-        "Customer testimonials",
-        "Easy contact & booking",
+        t("examples-cleaning-f1"),
+        t("examples-cleaning-f2"),
+        t("examples-cleaning-f3"),
       ],
-      previewImage: "/demos/cleaning-preview.jpg", // Replace with actual path
+      previewImage: "/demos/cleaning-preview.jpg",
     },
   ];
 
@@ -44,11 +47,10 @@ export default function Examples() {
         {/* Section header */}
         <div className="max-w-8xl mb-16 text-center">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-gray-900">
-            Examples of Our Work
+            {t("examples-title")}
           </h2>
           <p className="text-lg max-w-3xl mx-auto md:text-xl text-gray-600 leading-relaxed">
-            These are websites we can build for your business — modern,
-            professional, and mobile-ready.
+            {t("examples-subtitle")}
           </p>
         </div>
 
@@ -61,7 +63,6 @@ export default function Examples() {
             >
               {/* Demo preview with realistic mockup */}
               <div className="relative bg-gray-50 h-64 overflow-hidden">
-                {/* Browser chrome mockup */}
                 <div className="absolute top-3 left-3 right-3 bg-white rounded-t-lg shadow-sm">
                   <div className="flex items-center gap-1.5 px-3 py-2 border-b border-gray-200">
                     <div className="w-2 h-2 rounded-full bg-red-400"></div>
@@ -72,7 +73,6 @@ export default function Examples() {
                     </div>
                   </div>
 
-                  {/* Website preview content */}
                   <div className="p-4 space-y-2">
                     <div className="h-3 bg-gray-900 rounded w-3/4"></div>
                     <div className="h-2 bg-gray-300 rounded w-full"></div>
@@ -127,7 +127,7 @@ export default function Examples() {
                   href="#contact"
                   className="block text-center py-3 px-4 bg-gray-50 border border-gray-200 text-gray-900 rounded-lg hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-200 font-semibold text-sm"
                 >
-                  View Demo
+                  {t("examples-view-demo")}
                 </a>
               </div>
             </div>
@@ -138,14 +138,13 @@ export default function Examples() {
         <div className="max-w-3xl mx-auto">
           <div className="bg-gray-50 border border-gray-200 rounded-xl p-8 text-center">
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              Your website will be fully customized to match your business and
-              services.
+              {t("examples-custom-note")}
             </p>
             <a
               href="#contact"
               className="inline-block px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
             >
-              Get Your Website
+              {t("examples-get-yours")}
             </a>
           </div>
         </div>

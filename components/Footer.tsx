@@ -1,6 +1,10 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 export default function Footer() {
+  const t = useTranslations("footer");
+
   return (
     <footer className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white overflow-hidden">
       {/* Background decoration */}
@@ -34,21 +38,22 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-gray-400 leading-relaxed mb-6 max-w-md">
-              We build simple, professional websites for local businesses in
-              Georgia. Fast delivery, clear pricing, and direct communication.
+              {t("footer-description")}
             </p>
           </div>
 
           {/* Quick links */}
           <div>
-            <h3 className="text-white font-bold mb-4">Quick Links</h3>
+            <h3 className="text-white font-bold mb-4">
+              {t("footer-links-title")}
+            </h3>
             <ul className="space-y-3">
               <li>
                 <a
                   href="#examples"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  Examples
+                  {t("footer-links-examples")}
                 </a>
               </li>
               <li>
@@ -56,7 +61,7 @@ export default function Footer() {
                   href="#pricing"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  Pricing
+                  {t("footer-links-pricing")}
                 </a>
               </li>
               <li>
@@ -64,7 +69,7 @@ export default function Footer() {
                   href="#about"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  About Us
+                  {t("footer-links-about")}
                 </a>
               </li>
               <li>
@@ -72,7 +77,7 @@ export default function Footer() {
                   href="#contact"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  Contact
+                  {t("footer-links-contact")}
                 </a>
               </li>
             </ul>
@@ -80,7 +85,9 @@ export default function Footer() {
 
           {/* Contact info */}
           <div>
-            <h3 className="text-white font-bold mb-4">Contact</h3>
+            <h3 className="text-white font-bold mb-4">
+              {t("footer-contact-title")}
+            </h3>
             <ul className="space-y-3 text-gray-400">
               <li className="flex items-start gap-2">
                 <svg
@@ -102,7 +109,7 @@ export default function Footer() {
                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                   />
                 </svg>
-                <span>Tbilisi, Georgia</span>
+                <span>{t("footer-location")}</span>
               </li>
               <li className="flex items-start gap-2">
                 <svg
@@ -153,13 +160,13 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="pt-8 mt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
-            <p>© 2025 webuild.ge. All rights reserved.</p>
+            <p>{t("footer-rights")}</p>
             <div className="flex gap-6">
               <a href="#" className="hover:text-white transition-colors">
-                Privacy Policy
+                {t("footer-privacy")}
               </a>
               <a href="#" className="hover:text-white transition-colors">
-                Terms of Service
+                {t("footer-terms")}
               </a>
             </div>
           </div>

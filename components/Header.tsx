@@ -1,8 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useTranslations } from "next-intl";
+import LanguageSwitcher from "./reusable/LanguageSwitcher";
 
 export default function Header() {
+  const t = useTranslations("header");
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -37,28 +40,30 @@ export default function Header() {
               href="#examples"
               className="text-gray-600 hover:text-gray-900 transition-colors font-medium"
             >
-              Examples
+              {t("nav-examples")}
             </a>
             <a
               href="#pricing"
               className="text-gray-600 hover:text-gray-900 transition-colors font-medium"
             >
-              Pricing
+              {t("nav-pricing")}
             </a>
             <a
               href="#about"
               className="text-gray-600 hover:text-gray-900 transition-colors font-medium"
             >
-              About
+              {t("nav-about")}
             </a>
           </nav>
-
-          <a
-            href="#contact"
-            className="px-6 py-2.5 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl hover:shadow-lg hover:shadow-blue-600/30 transition-all duration-300 font-medium hover:scale-105"
-          >
-            Get Started
-          </a>
+          <div className="flex items-center gap-x-5">
+            <a
+              href="#contact"
+              className="px-6 py-2.5 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl hover:shadow-lg hover:shadow-blue-600/30 transition-all duration-300 font-medium hover:scale-105"
+            >
+              {t("nav-get-started")}
+            </a>
+            <LanguageSwitcher />
+          </div>
         </div>
       </div>
     </header>

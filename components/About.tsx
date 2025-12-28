@@ -1,6 +1,10 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 export default function About() {
+  const t = useTranslations("about");
+
   return (
     <section
       id="about"
@@ -34,7 +38,7 @@ export default function About() {
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full">
             <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
             <span className="text-sm font-semibold text-blue-300">
-              About Us
+              {t("about-badge")}
             </span>
           </div>
         </div>
@@ -42,34 +46,36 @@ export default function About() {
         {/* Main content */}
         <div className="text-center mb-16">
           <h2 className="text-5xl lg:text-6xl font-bold mb-8 text-white leading-tight">
-            Small Studio.
+            {t("about-title-1")}
             <br />
             <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-              Big Results.
+              {t("about-title-2")}
             </span>
           </h2>
 
           <div className="max-w-3xl mx-auto space-y-6 text-lg lg:text-xl text-gray-300 leading-relaxed">
             <p>
-              We&apos;re a small web studio based in{" "}
-              <span className="text-white font-semibold">Tbilisi</span>. We
-              build simple, professional websites for local businesses that need
-              an online presence without the complexity.
-            </p>
-
-            <p>
-              When you work with us, you work{" "}
-              <span className="text-blue-400 font-semibold">
-                directly with me
+              {t("about-p1-text")}
+              <span className="text-white font-semibold">
+                {t("about-p1-location")}
               </span>
-              . No teams, no account managers, no confusion. Just clear
-              communication and a website that works for your business.
+              {t("about-p1-rest")}
             </p>
 
             <p>
-              If you need a straightforward website that helps customers find
-              and contact you,{" "}
-              <span className="text-white font-semibold">let&apos;s talk</span>.
+              {t("about-p2-text")}
+              <span className="text-blue-400 font-semibold">
+                {t("about-p2-highlight")}
+              </span>
+              {t("about-p2-rest")}
+            </p>
+
+            <p>
+              {t("about-p3-text")}
+              <span className="text-white font-semibold">
+                {t("about-p3-highlight")}
+              </span>
+              .
             </p>
           </div>
         </div>
@@ -80,10 +86,10 @@ export default function About() {
             <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all"></div>
             <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 text-center group-hover:border-white/20 transition-all">
               <div className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-3">
-                1-on-1
+                {t("about-stat-1-value")}
               </div>
               <div className="text-gray-400 font-medium">
-                Direct Communication
+                {t("about-stat-1-label")}
               </div>
             </div>
           </div>
@@ -92,9 +98,11 @@ export default function About() {
             <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-pink-600/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all"></div>
             <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 text-center group-hover:border-white/20 transition-all">
               <div className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-3">
-                7 Days
+                {t("about-stat-2-value")}
               </div>
-              <div className="text-gray-400 font-medium">Average Delivery</div>
+              <div className="text-gray-400 font-medium">
+                {t("about-stat-2-label")}
+              </div>
             </div>
           </div>
 
@@ -102,9 +110,11 @@ export default function About() {
             <div className="absolute inset-0 bg-gradient-to-br from-pink-600/20 to-blue-600/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all"></div>
             <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 text-center group-hover:border-white/20 transition-all">
               <div className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text text-transparent mb-3">
-                Local
+                {t("about-stat-3-value")}
               </div>
-              <div className="text-gray-400 font-medium">Tbilisi Based</div>
+              <div className="text-gray-400 font-medium">
+                {t("about-stat-3-label")}
+              </div>
             </div>
           </div>
         </div>
@@ -115,7 +125,7 @@ export default function About() {
             href="#contact"
             className="group inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl font-bold text-lg hover:shadow-2xl hover:shadow-blue-600/50 transition-all duration-300 hover:scale-105"
           >
-            Let&apos;s Build Your Website
+            {t("about-cta")}
             <svg
               className="w-5 h-5 group-hover:translate-x-1 transition-transform"
               fill="none"
