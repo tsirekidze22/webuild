@@ -8,7 +8,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative py-16 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden"
+      className="relative py-16 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden scroll-mt-10"
     >
       {/* Animated background elements */}
       <div className="absolute inset-0">
