@@ -36,7 +36,7 @@ export default function Hero() {
   return (
     <section className="bg-white py-20 md:pt-32 lg:pt-40">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-3 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-3 gap-12 lg:gap-16 items-start">
           {/* Left column - Text content (2/3 width) */}
           <div className="lg:col-span-2">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-900 leading-tight">
@@ -66,29 +66,29 @@ export default function Hero() {
             </div>
 
             {/* Simple stats */}
-            <div className="grid grid-cols-3 gap-8 pt-8 border-t border-gray-200">
-              <div>
-                <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-1">
+            <div className="flex gap-8 pt-8 border-t border-gray-200">
+              <div className="flex-shrink-0">
+                <div className="text-3xl md:text-[32px] font-bold text-gray-900 mb-1">
                   {t("hero-stat-price")}
                 </div>
                 <div className="text-gray-600 text-sm md:text-base">
                   {t("hero-stat-price-label")}
                 </div>
               </div>
-              <div>
-                <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-1">
+              <div className="flex-shrink-0">
+                <div className="text-3xl md:text-[32px] font-bold text-gray-900 mb-1">
                   {t("hero-stat-time")}
                 </div>
                 <div className="text-gray-600 text-sm md:text-base">
                   {t("hero-stat-time-label")}
                 </div>
               </div>
-              <div>
-                <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-1">
-                  {t("hero-stat-local")}
+              <div className="flex-1">
+                <div className="text-3xl md:text-[32px] font-bold text-gray-900 mb-1">
+                  {t("hero-stat-contact")}
                 </div>
                 <div className="text-gray-600 text-sm md:text-base">
-                  {t("hero-stat-local-label")}
+                  {t("hero-stat-contact-label")}
                 </div>
               </div>
             </div>

@@ -42,7 +42,7 @@ export default function Examples() {
   ];
 
   return (
-    <section id="examples" className="bg-white py-20 md:py-24">
+    <section id="examples" className="bg-white py-20 md:py-16">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section header */}
         <div className="max-w-8xl mb-16 text-center">

@@ -72,7 +72,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative py-24 bg-gradient-to-br from-white via-blue-50 to-purple-50 overflow-hidden"
+      className="relative py-16 bg-gradient-to-br from-white via-blue-50 to-purple-50 overflow-hidden"
     >
       <div className="absolute inset-0">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-blue-200 to-purple-200 rounded-full blur-3xl opacity-20"></div>
@@ -81,21 +81,7 @@ export default function Contact() {
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-100 rounded-full mb-6">
-            <svg
-              className="w-4 h-4 text-blue-600"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-            </svg>
-            <span className="text-sm font-semibold text-blue-700">
-              {t("contact-badge")}
-            </span>
-          </div>
-
-          <h2 className="text-5xl lg:text-6xl font-bold mb-6">
+          <h2 className="text-5xl font-bold mb-6">
             <span className="bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
               {t("contact-title")}
             </span>

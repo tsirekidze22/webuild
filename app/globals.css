@@ -19,6 +19,21 @@
   }
 }
 
+/* Typography */
+html {
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+/* Georgian font line-height fix  */
+html[lang="ka"] h1,
+html[lang="ka"] h2,
+html[lang="ka"] h3,
+html[lang="ka"] .text-4xl,
+html[lang="ka"] .text-5xl,
+html[lang="ka"] .text-6xl {
+  line-height: 1.25 !important;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);

@@ -33,7 +33,6 @@
     "about-cta": "Let's Build Your Website"
   },
   "contact": {
-    "contact-badge": "Get In Touch",
     "contact-title": "Ready to Get Started?",
     "contact-description": "Contact us today and let's discuss your business website. Choose whichever way is easiest for you.",
     "contact-phone-label": "Phone",
@@ -73,8 +72,8 @@
     "examples-cleaning-f3": "Easy contact & booking"
   },
   "hero": {
-    "hero-title": "Simple, Professional Websites",
-    "hero-subtitle": "for Local Businesses",
+    "hero-title": "Professional Websites",
+    "hero-subtitle": "for Your Businesses",
     "hero-description": "Get a mobile-friendly website that helps customers find you and contact you easily. No complicated setup, no hidden costs.",
     "hero-cta-primary": "See Examples",
     "hero-cta-secondary": "Contact Us",
@@ -82,14 +81,13 @@
     "hero-stat-price-label": "Fixed Price",
     "hero-stat-time": "7 Days",
     "hero-stat-time-label": "Fast Setup",
-    "hero-stat-local": "Local",
-    "hero-stat-local-label": "Tbilisi Based",
+    "hero-stat-contact": "Direct Contact",
+    "hero-stat-contact-label": "With Developer",
     "hero-slide-repair": "Home Repair Demo",
     "hero-slide-plumbing": "Plumbing Demo",
     "hero-slide-cleaning": "Cleaning Demo"
   },
   "pricing": {
-    "pricing-badge": "Transparent Pricing",
     "pricing-title": "Simple, Clear Pricing",
     "pricing-subtitle": "One fixed price. No hidden fees. No surprises. Know exactly what you're paying before we start.",
     "pricing-package-name": "Standard Package",
@@ -108,7 +106,6 @@
     "pricing-custom-link": "Contact us for a custom quote"
   },
   "whatsIncluded": {
-    "features-badge": "Features Included",
     "features-title": "Everything You Need",
     "features-subtitle": "A complete, professional website package with all the essential features to help your business succeed online.",
     "features-f1-title": "One-page business website",
@@ -128,7 +125,6 @@
     "features-extra-link": "Let's discuss your needs."
   },
   "whyThisWorks": {
-    "benefits-badge": "Our Approach",
     "benefits-title": "Why This Works",
     "benefits-subtitle": "A simple, straightforward process designed around what local businesses actually need. No confusion, no complexity.",
     "benefits-f1-title": "Fast setup",
@@ -145,6 +141,22 @@
     "benefits-f6-desc": "You know exactly what you're paying before we start. No surprise bills later.",
     "benefits-learn-more": "Learn more",
     "benefits-cta": "Ready to get started?"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know before we start",
+    "q1-question": "Does the 600₾ cover everything?",
+    "q1-answer": "This fee covers the complete design and development of your website. The domain and hosting are registered in your name to ensure you have 100% ownership of your site.",
+    "q2-question": "What are the additional costs for?",
+    "q2-answer": "Every website needs a domain (address) and hosting (server space). These are external utility services. Think of it like renting a physical space for your shop-it's a necessary base cost that you pay directly to the service provider.",
+    "q3-question": "Are there any recurring monthly fees?",
+    "q3-answer": "No. There are no monthly maintenance fees. You pay once for the build, and your website belongs to you, working independently without any mandatory ongoing costs.",
+    "q4-question": "When will my website be live?",
+    "q4-answer": "You will receive a fully functional, mobile-responsive website ready for customers in exactly 7 days.",
+    "q5-question": "Who handles the technical maintenance of the website?",
+    "q5-answer": "We offer a 'stress-free' management package starting from 50₾ per month. This covers hosting management, SSL security, daily backups, and business email setup. We handle the technical side so you can focus on your business. Of course, this is optional-if you prefer to manage the hosting yourself, you are free to do so.",
+    "more-questions": "Still have questions?",
+    "contact-us": "Get in touch with us"
   },
   "footer": {
     "footer-description": "We build simple, professional websites for local businesses in Georgia. Fast delivery, clear pricing, and direct communication.",

@@ -2,12 +2,17 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
-import { Inter } from "next/font/google";
+import { Inter, Noto_Sans_Georgian } from "next/font/google";
 import "../globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
+});
+
+const noto = Noto_Sans_Georgian({
+  subsets: ["georgian"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export async function generateMetadata({
@@ -68,7 +73,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <body className={`${inter.className} antialiased`}>
+      <body className={locale === "ka" ? noto.className : inter.className}>
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>

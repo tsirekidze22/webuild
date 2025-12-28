@@ -137,30 +137,13 @@ export default function WhatsIncluded() {
   ];
 
   return (
-    <section className="relative py-24 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+    <section className="relative py-16 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
       <div className="absolute top-20 left-0 w-96 h-96 bg-gradient-to-br from-purple-100 to-blue-100 rounded-full blur-3xl opacity-30"></div>
       <div className="absolute bottom-20 right-0 w-96 h-96 bg-gradient-to-br from-blue-100 to-pink-100 rounded-full blur-3xl opacity-30"></div>
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-100 rounded-full mb-6">
-            <svg
-              className="w-4 h-4 text-blue-600"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path
-                fillRule="evenodd"
-                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                clipRule="evenodd"
-              />
-            </svg>
-            <span className="text-sm font-semibold text-blue-700">
-              {t("features-badge")}
-            </span>
-          </div>
-
-          <h2 className="text-5xl lg:text-6xl font-bold mb-6">
+          <h2 className="text-5xl font-bold mb-6">
             <span className="bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
               {t("features-title")}
             </span>
