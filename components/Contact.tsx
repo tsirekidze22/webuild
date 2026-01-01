@@ -72,7 +72,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative py-16 bg-gradient-to-br from-white via-blue-50 to-purple-50 overflow-hidden"
+      className="relative py-16 bg-gradient-to-br from-white via-blue-50 to-purple-50 overflow-hidden scroll-mt-6"
     >
       <div className="absolute inset-0">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-blue-200 to-purple-200 rounded-full blur-3xl opacity-20"></div>

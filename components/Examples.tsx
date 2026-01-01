@@ -1,11 +1,23 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 export default function Examples() {
   const t = useTranslations("examples");
 
   const examples = [
+    {
+      id: 3,
+      title: t("examples-renovation-title"),
+      description: t("examples-renovation-desc"),
+      features: [
+        t("examples-renovation-f1"),
+        t("examples-renovation-f2"),
+        t("examples-renovation-f3"),
+      ],
+      previewImage: "/assets/images/interior-design-desktop.jpg",
+    },
     {
       id: 1,
       title: t("examples-repair-title"),
@@ -15,29 +27,18 @@ export default function Examples() {
         t("examples-repair-f2"),
         t("examples-repair-f3"),
       ],
-      previewImage: "/demos/repair-preview.jpg",
+      previewImage: "/assets/images/fullservice-desktop.png",
     },
     {
       id: 2,
-      title: t("examples-plumbing-title"),
-      description: t("examples-plumbing-desc"),
+      title: t("examples-design-title"),
+      description: t("examples-design-desc"),
       features: [
-        t("examples-plumbing-f1"),
-        t("examples-plumbing-f2"),
-        t("examples-plumbing-f3"),
+        t("examples-design-f1"),
+        t("examples-design-f2"),
+        t("examples-design-f3"),
       ],
-      previewImage: "/demos/plumbing-preview.jpg",
-    },
-    {
-      id: 3,
-      title: t("examples-cleaning-title"),
-      description: t("examples-cleaning-desc"),
-      features: [
-        t("examples-cleaning-f1"),
-        t("examples-cleaning-f2"),
-        t("examples-cleaning-f3"),
-      ],
-      previewImage: "/demos/cleaning-preview.jpg",
+      previewImage: "/assets/images/interior-design-desktop.jpg",
     },
   ];
 
@@ -59,35 +60,20 @@ export default function Examples() {
           {examples.map((example) => (
             <div
               key={example.id}
-              className="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300"
+              className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300"
             >
-              {/* Demo preview with realistic mockup */}
-              <div className="relative bg-gray-50 h-64 overflow-hidden">
-                <div className="absolute top-3 left-3 right-3 bg-white rounded-t-lg shadow-sm">
-                  <div className="flex items-center gap-1.5 px-3 py-2 border-b border-gray-200">
-                    <div className="w-2 h-2 rounded-full bg-red-400"></div>
-                    <div className="w-2 h-2 rounded-full bg-yellow-400"></div>
-                    <div className="w-2 h-2 rounded-full bg-green-400"></div>
-                    <div className="flex-1 ml-2 h-5 bg-gray-100 rounded text-xs flex items-center px-2 text-gray-400">
-                      webuild.ge/demo
-                    </div>
-                  </div>
+              {/* Image preview */}
+              <div className="relative h-64 overflow-hidden bg-gray-100">
+                <Image
+                  src={example.previewImage}
+                  alt={example.title}
+                  fill
+                  className="object-cover transition-transform"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
 
-                  <div className="p-4 space-y-2">
-                    <div className="h-3 bg-gray-900 rounded w-3/4"></div>
-                    <div className="h-2 bg-gray-300 rounded w-full"></div>
-                    <div className="h-2 bg-gray-300 rounded w-5/6"></div>
-                    <div className="flex gap-2 mt-3">
-                      <div className="h-6 bg-blue-600 rounded w-24"></div>
-                      <div className="h-6 bg-gray-200 rounded w-20"></div>
-                    </div>
-                    <div className="grid grid-cols-3 gap-2 mt-4">
-                      <div className="h-16 bg-gray-200 rounded"></div>
-                      <div className="h-16 bg-gray-200 rounded"></div>
-                      <div className="h-16 bg-gray-200 rounded"></div>
-                    </div>
-                  </div>
-                </div>
+                {/* Optional overlay for better contrast */}
+                <div className="absolute inset-0 bg-black/5" />
               </div>
 
               {/* Content */}
