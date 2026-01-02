@@ -12,4 +12,10 @@ export const routing = defineRouting({
   // This means /about instead of /ka/about for Georgian
   // But /en/about for English
   localePrefix: "as-needed",
+
+  // 🔥 DISABLE AUTO-DETECTION
+  // This prevents next-intl from detecting locale from:
+  // - Browser Accept-Language headers
+  // - User's browser preferences
+  localeDetection: false,
 });
