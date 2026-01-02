@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { Inter, Noto_Sans_Georgian } from "next/font/google";
 import "../globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -76,6 +77,7 @@ export default async function LocaleLayout({
       <body className={locale === "ka" ? noto.className : inter.className}>
         <NextIntlClientProvider messages={messages}>
           {children}
+          <Analytics />
         </NextIntlClientProvider>
       </body>
     </html>
