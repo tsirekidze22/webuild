@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Examples() {
   const t = useTranslations("examples");
@@ -17,6 +18,7 @@ export default function Examples() {
         t("examples-renovation-f3"),
       ],
       previewImage: "/assets/images/renovation-desktop.png",
+      href: "https://renovapro.webuild.ge",
     },
     {
       id: 1,
@@ -28,6 +30,7 @@ export default function Examples() {
         t("examples-repair-f3"),
       ],
       previewImage: "/assets/images/fullservice-desktop.png",
+      href: "https://spacecraft.webuild.ge",
     },
     {
       id: 2,
@@ -39,6 +42,7 @@ export default function Examples() {
         t("examples-design-f3"),
       ],
       previewImage: "/assets/images/interior-design-desktop.jpg",
+      href: "https://designstudio.webuild.ge",
     },
   ];
 
@@ -58,9 +62,12 @@ export default function Examples() {
         {/* Examples grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {examples.map((example) => (
-            <div
+            <Link
               key={example.id}
-              className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300"
+              href={example.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer"
             >
               {/* Image preview */}
               <div className="relative h-64 overflow-hidden bg-gray-100">
@@ -68,17 +75,39 @@ export default function Examples() {
                   src={example.previewImage}
                   alt={example.title}
                   fill
-                  className="object-cover transition-transform"
+                  className="object-cover transition-transform group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
 
-                {/* Optional overlay for better contrast */}
-                <div className="absolute inset-0 bg-black/5" />
+                {/* Overlay on hover */}
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300" />
+
+                {/* "Visit Site" badge on hover */}
+                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm font-semibold text-gray-900">
+                      {t("examples-visit-site")}
+                    </span>
+                    <svg
+                      className="w-4 h-4 text-gray-900"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
+                    </svg>
+                  </div>
+                </div>
               </div>
 
               {/* Content */}
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
                   {example.title}
                 </h3>
 
@@ -109,14 +138,25 @@ export default function Examples() {
                   ))}
                 </ul>
 
-                <a
-                  href="#contact"
-                  className="block text-center py-3 px-4 bg-gray-50 border border-gray-200 text-gray-900 rounded-lg hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-200 font-semibold text-sm"
-                >
-                  {t("examples-view-demo")}
-                </a>
+                {/* CTA Button */}
+                <div className="flex items-center justify-between py-3 px-4 bg-gray-50 border border-gray-200 text-gray-900 rounded-lg group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-all duration-200 font-semibold text-sm">
+                  <span>{t("examples-view-demo")}</span>
+                  <svg
+                    className="w-5 h-5 transform group-hover:translate-x-1 transition-transform"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
