@@ -45,7 +45,7 @@ export default function Hero() {
             </div>
 
             {/* Stats */}
-            <div className="flex flex-col sm:flex-row justify-between gap-6 sm:gap-0 border-t pt-6 border-gray-200">
+            <div className="text-center md:text-start flex flex-col sm:flex-row justify-between gap-6 sm:gap-0 border-t pt-6 border-gray-200">
               <Stat
                 value={t("hero-stat-price")}
                 label={t("hero-stat-price-label")}
