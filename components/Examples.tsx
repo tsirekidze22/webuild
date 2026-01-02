@@ -16,7 +16,7 @@ export default function Examples() {
         t("examples-renovation-f2"),
         t("examples-renovation-f3"),
       ],
-      previewImage: "/assets/images/interior-design-desktop.jpg",
+      previewImage: "/assets/images/renovation-desktop.png",
     },
     {
       id: 1,
