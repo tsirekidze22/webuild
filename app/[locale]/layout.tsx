@@ -27,6 +27,30 @@ export async function generateMetadata({
   const t = await getTranslations("mainMetadata");
   const baseUrl = "https://webuild.ge";
 
+  // JSON-LD for Organization
+  const organizationJSON = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Webuild.ge",
+    url: baseUrl,
+    logo: `${baseUrl}/assets/image/logo.png`,
+    sameAs: [],
+  };
+
+  // JSON-LD Breadcrumb
+  const breadcrumbJSON = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: `${baseUrl}/${locale}`,
+      },
+    ],
+  };
+
   return {
     title: t("metadata-title"),
     description: t("metadata-description"),
@@ -40,7 +64,7 @@ export async function generateMetadata({
       siteName: "Webuild.ge",
       images: [
         {
-          url: `${baseUrl}/og-image.jpg`,
+          url: `${baseUrl}/assets/images/og-image.jpg`,
           width: 1200,
           height: 630,
         },
@@ -52,11 +76,11 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: t("og-title"),
       description: t("og-description"),
-      images: [`${baseUrl}/og-image.jpg`],
+      images: [`${baseUrl}/assets/images/og-image.jpg`],
       creator: "@webuildge",
     },
     alternates: {
-      canonical: `${baseUrl}/${locale}`,
+      canonical: locale === "ka" ? baseUrl : `${baseUrl}/${locale}`,
       languages: {
         en: `${baseUrl}/en`,
         ka: `${baseUrl}/ka`,
@@ -66,13 +90,11 @@ export async function generateMetadata({
     other: [
       {
         type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          name: "Webuild.ge",
-          url: baseUrl,
-          logo: `${baseUrl}/assets/image/logo.png`,
-        }),
+        children: JSON.stringify(organizationJSON),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(breadcrumbJSON),
       },
     ],
   };
@@ -85,7 +107,6 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }) {
-  // Await params before using
   const { locale } = await params;
 
   if (!routing.locales.includes(locale as "en" | "ka")) {
