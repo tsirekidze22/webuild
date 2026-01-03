@@ -23,9 +23,10 @@ export async function generateMetadata({
 }: {
   params: Promise<{ locale: string }>;
 }) {
-  // Await params before using
   const { locale } = await params;
   const t = await getTranslations("mainMetadata");
+
+  const baseUrl = "https://webuild.ge";
 
   return {
     title: t("metadata-title"),
@@ -36,11 +37,11 @@ export async function generateMetadata({
     openGraph: {
       title: t("og-title"),
       description: t("og-description"),
-      url: "https://webuild.ge",
+      url: `${baseUrl}/${locale}`,
       siteName: "Webuild.ge",
       images: [
         {
-          url: "https://webuild.ge/og-image.jpg",
+          url: `${baseUrl}/og-image.jpg`,
           width: 1200,
           height: 630,
         },
@@ -52,8 +53,15 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: t("og-title"),
       description: t("og-description"),
-      images: ["https://webuild.ge/og-image.jpg"],
+      images: [`${baseUrl}/og-image.jpg`],
       creator: "@webuildge",
+    },
+    alternates: {
+      canonical: `${baseUrl}/${locale}`,
+      languages: {
+        en: `${baseUrl}/en`,
+        ka: `${baseUrl}/ka`,
+      },
     },
   };
 }
