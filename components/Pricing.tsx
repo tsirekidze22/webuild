@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 export default function Pricing() {
   const t = useTranslations("pricing");
@@ -107,7 +108,7 @@ export default function Pricing() {
                   ))}
                 </div>
 
-                <a
+                <Link
                   href="#contact"
                   className="group/btn relative block w-full py-5 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-2xl font-bold text-lg text-center overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-blue-600/50 hover:scale-105"
                 >
@@ -128,7 +129,7 @@ export default function Pricing() {
                     </svg>
                   </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-800 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300"></div>
-                </a>
+                </Link>
 
                 <div className="mt-8 flex items-center justify-center gap-2 text-sm text-gray-600">
                   <svg
@@ -151,12 +152,12 @@ export default function Pricing() {
           <div className="mt-12 text-center">
             <p className="text-gray-600 text-lg">
               {t("pricing-custom-note")}{" "}
-              <a
+              <Link
                 href="#contact"
                 className="text-blue-600 hover:text-blue-700 font-bold underline decoration-2 underline-offset-4 transition-colors"
               >
                 {t("pricing-custom-link")}
-              </a>
+              </Link>
             </p>
           </div>
         </div>

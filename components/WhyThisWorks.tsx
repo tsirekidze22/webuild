@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 export default function WhyThisWorks() {
   const t = useTranslations("whyThisWorks");
@@ -203,7 +204,7 @@ export default function WhyThisWorks() {
         <div className="mt-20 text-center">
           <div className="inline-block relative group">
             <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-2xl blur-lg opacity-25 group-hover:opacity-50 transition-opacity"></div>
-            <a
+            <Link
               href="#contact"
               className="relative px-10 py-5 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-2xl font-bold text-lg inline-flex items-center gap-3 hover:shadow-2xl hover:scale-105 transition-all duration-300"
             >
@@ -221,7 +222,7 @@ export default function WhyThisWorks() {
                   d="M17 8l4 4m0 0l-4 4m4-4H3"
                 />
               </svg>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

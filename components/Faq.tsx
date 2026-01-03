@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 export default function FAQ() {
   const t = useTranslations("faq");
@@ -80,12 +81,12 @@ export default function FAQ() {
         <div className="mt-16 p-8 bg-blue-50 rounded-3xl text-center">
           <p className="text-gray-700 font-medium">
             {t("more-questions")}{" "}
-            <a
+            <Link
               href="#contact"
               className="text-blue-600 hover:text-blue-700 underline underline-offset-4 decoration-2"
             >
               {t("contact-us")}
-            </a>
+            </Link>
           </p>
         </div>
       </div>

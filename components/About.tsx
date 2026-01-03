@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 export default function About() {
   const t = useTranslations("about");
@@ -42,7 +43,6 @@ export default function About() {
             </span>
           </div>
         </div>
-
         {/* Main content */}
         <div className="text-center mb-16">
           <h2 className="text-5xl font-bold mb-8 text-white leading-tight">
@@ -79,7 +79,6 @@ export default function About() {
             </p>
           </div>
         </div>
-
         {/* Stats/highlights */}
         <div className="grid md:grid-cols-3 gap-8 mt-20">
           <div className="group relative">
@@ -118,10 +117,9 @@ export default function About() {
             </div>
           </div>
         </div>
-
         {/* CTA */}
         <div className="mt-16 text-center">
-          <a
+          <Link
             href="#contact"
             className="group inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl font-bold text-lg hover:shadow-2xl hover:shadow-blue-600/50 transition-all duration-300 hover:scale-105"
           >
@@ -139,7 +137,7 @@ export default function About() {
                 d="M17 8l4 4m0 0l-4 4m4-4H3"
               />
             </svg>
-          </a>
+          </Link>
         </div>
       </div>
 

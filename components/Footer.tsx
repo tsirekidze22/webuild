@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 export default function Footer() {
   const t = useTranslations("footer");
@@ -42,48 +43,47 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Quick links */}
+          {/* Quick links - CONVERTED TO Link */}
           <div>
             <h3 className="text-white font-bold mb-4">
               {t("footer-links-title")}
             </h3>
             <ul className="space-y-3">
               <li>
-                <a
+                <Link
                   href="#examples"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   {t("footer-links-examples")}
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="#pricing"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   {t("footer-links-pricing")}
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="#about"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   {t("footer-links-about")}
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="#contact"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   {t("footer-links-contact")}
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
 
-          {/* Contact info */}
           <div>
             <h3 className="text-white font-bold mb-4">
               {t("footer-contact-title")}
@@ -157,17 +157,22 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom bar */}
         <div className="pt-8 mt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
             <p>{t("footer-rights")}</p>
             <div className="flex gap-6">
-              <a href="#" className="hover:text-white transition-colors">
+              <Link
+                href="/privacy-policy"
+                className="hover:text-white transition-colors"
+              >
                 {t("footer-privacy")}
-              </a>
-              <a href="#" className="hover:text-white transition-colors">
+              </Link>
+              <Link
+                href="/terms"
+                className="hover:text-white transition-colors"
+              >
                 {t("footer-terms")}
-              </a>
+              </Link>
             </div>
           </div>
         </div>

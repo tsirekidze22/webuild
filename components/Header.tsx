@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 import LanguageSwitcher from "./reusable/LanguageSwitcher";
 
 export default function Header() {
@@ -32,46 +33,46 @@ export default function Header() {
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
-            {/* Logo */}
-            <a href="#" className="flex items-center gap-3 group">
+            {/* Logo - CONVERTED TO Link */}
+            <Link href="/" className="flex items-center gap-3 group">
               <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center shadow-lg shadow-blue-600/20 transition-transform group-hover:scale-105">
                 <span className="text-white font-bold text-lg">W</span>
               </div>
               <span className="text-xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
                 webuild.ge
               </span>
-            </a>
+            </Link>
 
-            {/* Desktop Navigation */}
+            {/* Desktop Navigation - CONVERTED TO Link */}
             <nav className="hidden md:flex items-center gap-8">
-              <a
+              <Link
                 href="#examples"
                 className="text-gray-600 hover:text-gray-900 transition-colors font-medium"
               >
                 {t("nav-examples")}
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#pricing"
                 className="text-gray-600 hover:text-gray-900 transition-colors font-medium"
               >
                 {t("nav-pricing")}
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#about"
                 className="text-gray-600 hover:text-gray-900 transition-colors font-medium"
               >
                 {t("nav-about")}
-              </a>
+              </Link>
             </nav>
 
-            {/* Right side */}
+            {/* Right side - CONVERTED TO Link */}
             <div className="flex items-center gap-x-5">
-              <a
+              <Link
                 href="#contact"
                 className="hidden sm:inline-flex px-6 py-2.5 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl hover:shadow-lg hover:shadow-blue-600/30 transition-all duration-300 font-medium hover:scale-105"
               >
                 {t("nav-get-started")}
-              </a>
+              </Link>
 
               <LanguageSwitcher />
 
@@ -102,42 +103,42 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Mobile Overlay Menu */}
+      {/* Mobile Overlay Menu - CONVERTED TO Link */}
       <div
         className={`fixed inset-0 z-40 bg-white/95 backdrop-blur-xl transition-all duration-300 md:hidden ${
           isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       >
         <div className="flex flex-col items-center justify-center h-full space-y-8">
-          <a
+          <Link
             href="#examples"
             onClick={handleLinkClick}
             className="text-2xl font-medium text-gray-900"
           >
             {t("nav-examples")}
-          </a>
-          <a
+          </Link>
+          <Link
             href="#pricing"
             onClick={handleLinkClick}
             className="text-2xl font-medium text-gray-900"
           >
             {t("nav-pricing")}
-          </a>
-          <a
+          </Link>
+          <Link
             href="#about"
             onClick={handleLinkClick}
             className="text-2xl font-medium text-gray-900"
           >
             {t("nav-about")}
-          </a>
+          </Link>
 
-          <a
+          <Link
             href="#contact"
             onClick={handleLinkClick}
             className="mt-6 px-8 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl font-medium"
           >
             {t("nav-get-started")}
-          </a>
+          </Link>
         </div>
       </div>
     </>

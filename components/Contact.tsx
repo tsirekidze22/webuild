@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 export default function Contact() {
   const t = useTranslations("contact");
@@ -185,23 +186,24 @@ export default function Contact() {
           </div>
         </div>
 
+        {/* Bottom CTAs - CONVERTED TO Link */}
         <div className="mt-20 text-center">
           <p className="text-gray-600 text-lg mb-6">
             {t("contact-footer-text")}
           </p>
           <div className="flex justify-center gap-4 flex-wrap">
-            <a
+            <Link
               href="#examples"
               className="px-6 py-3 bg-white border-2 border-gray-200 text-gray-900 rounded-xl font-semibold hover:border-gray-300 hover:shadow-lg transition-all hover:scale-105"
             >
               {t("contact-view-examples")}
-            </a>
-            <a
+            </Link>
+            <Link
               href="#pricing"
               className="px-6 py-3 bg-white border-2 border-gray-200 text-gray-900 rounded-xl font-semibold hover:border-gray-300 hover:shadow-lg transition-all hover:scale-105"
             >
               {t("contact-see-pricing")}
-            </a>
+            </Link>
           </div>
         </div>
       </div>

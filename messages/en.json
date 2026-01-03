@@ -171,5 +171,35 @@
     "footer-rights": "© 2025 Webuild.ge. All rights reserved.",
     "footer-privacy": "Privacy Policy",
     "footer-terms": "Terms & Conditions"
+  },
+  "privacyPolicy": {
+    "back-home": "← Back to Home",
+    "title": "Privacy Policy",
+    "last-updated": "Last updated",
+    "section1-title": "1. General Information",
+    "section1-content": "We do not collect, store, or process any personal data from users. This website is a demo portfolio and does not use forms, cookies, or third-party trackers.",
+    "section2-title": "2. Analytics",
+    "section2-content": "We do not use any analytics tools (Google Analytics, Facebook Pixel, etc.). Your activities on this website are not tracked.",
+    "section3-title": "3. Cookies",
+    "section3-content": "Our website does not use cookies. Your browser will not store any information from our website.",
+    "section4-title": "4. Third-Party Services",
+    "section4-content": "Our website does not use third-party services that may collect your data.",
+    "questions": "Questions about privacy?",
+    "contact-us": "Contact us"
+  },
+  "terms": {
+    "back-home": "← Back to Home",
+    "title": "Terms of Service",
+    "last-updated": "Last updated",
+    "section1-title": "1. Scope of Service",
+    "section1-content": "Webuild.ge provides custom web design and development services. The client is responsible for providing all necessary content, imagery, and information required to complete the project within the agreed timeframe.",
+    "section2-title": "2. Intellectual Property & Ownership",
+    "section2-content": "All designs, code, and project deliverables remain the intellectual property of Webuild.ge until full settlement of the invoice. Upon final payment, full ownership rights are transferred to the client.",
+    "section3-title": "3. Limitation of Liability",
+    "section3-content": "Webuild.ge is not liable for any direct, indirect, or incidental damages resulting from the use or inability to use the delivered website. All services are provided on an 'as is' basis.",
+    "section4-title": "4. Amendments",
+    "section4-content": "We reserve the right to update these terms at any time. Any changes will be effective immediately upon being posted on this page.",
+    "questions": "Questions about our terms?",
+    "contact-us": "Contact us"
   }
 }

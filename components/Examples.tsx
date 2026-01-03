@@ -166,12 +166,12 @@ export default function Examples() {
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
               {t("examples-custom-note")}
             </p>
-            <a
+            <Link
               href="#contact"
               className="inline-block px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
             >
               {t("examples-get-yours")}
-            </a>
+            </Link>
           </div>
         </div>
       </div>

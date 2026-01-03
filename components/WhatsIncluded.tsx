@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 export default function WhatsIncluded() {
   const t = useTranslations("whatsIncluded");
@@ -226,12 +227,12 @@ export default function WhatsIncluded() {
                 </h4>
                 <p className="text-gray-300 leading-relaxed">
                   {t("features-extra-desc")}{" "}
-                  <a
+                  <Link
                     href="#contact"
                     className="text-blue-400 hover:text-blue-300 font-semibold underline transition-colors"
                   >
                     {t("features-extra-link")}
-                  </a>
+                  </Link>
                 </p>
               </div>
             </div>
