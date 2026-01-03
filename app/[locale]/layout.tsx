@@ -25,7 +25,6 @@ export async function generateMetadata({
 }) {
   const { locale } = await params;
   const t = await getTranslations("mainMetadata");
-
   const baseUrl = "https://webuild.ge";
 
   return {
@@ -63,6 +62,19 @@ export async function generateMetadata({
         ka: `${baseUrl}/ka`,
       },
     },
+    metadataBase: new URL(baseUrl),
+    other: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Webuild.ge",
+          url: baseUrl,
+          logo: `${baseUrl}/assets/image/logo.png`,
+        }),
+      },
+    ],
   };
 }
 
