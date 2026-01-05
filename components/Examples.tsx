@@ -144,7 +144,7 @@ export default function Examples() {
         {/* Bottom CTA */}
         <div className="max-w-4xl mx-auto">
           <div className="bg-white rounded-3xl sm:rounded-[32px] p-3 sm:p-10 lg:p-12 text-center border border-stone-200 shadow-sm">
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-stone-900 mb-4 sm:mb-6 tracking-tight">
+            <h3 className="text-1xl sm:text-3xl lg:text-4xl font-bold text-stone-900 mb-4 sm:mb-6 tracking-tight">
               {t("examples-custom-note")}
             </h3>
             <Link
