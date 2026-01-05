@@ -6,7 +6,7 @@ export default function PrivacyPolicy() {
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-white via-blue-50 to-purple-50 py-24">
-      <div className="max-w-4xl mx-auto px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto px-3 lg:px-8">
         {/* Back Button */}
         <Link
           href="/"

@@ -21,8 +21,8 @@ export default function FAQ() {
       id="faq"
       className="bg-white py-20 md:py-32 border-t border-gray-100"
     >
-      <div className="max-w-3xl mx-auto px-6 lg:px-8">
-        <div className="text-center mb-16">
+      <div className="max-w-3xl mx-auto px-3 lg:px-8">
+        <div className="md:text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
             {t("title")}
           </h2>

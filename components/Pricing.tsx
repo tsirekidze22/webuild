@@ -25,10 +25,10 @@ export default function Pricing() {
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl animate-pulse"></div>
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="relative max-w-7xl mx-auto px-3 lg:px-8">
         {/* Section header */}
-        <div className="text-center mb-20">
-          <h2 className="text-5xl font-bold mb-6">
+        <div className="md:text-center mb-20">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">
             <span className="bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
               {t("pricing-title")}
             </span>
@@ -45,7 +45,7 @@ export default function Pricing() {
             <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 rounded-3xl blur-xl opacity-25 group-hover:opacity-40 transition-opacity duration-500"></div>
 
             <div className="relative bg-white rounded-3xl shadow-2xl border-2 border-blue-100 overflow-hidden">
-              <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-8 py-4 flex items-center justify-between">
+              <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-3 md:px-8 py-4 flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
                     <svg
@@ -67,7 +67,7 @@ export default function Pricing() {
                 </div>
               </div>
 
-              <div className="p-10 lg:p-12">
+              <div className="p-3 lg:p-12">
                 <div className="text-center mb-10">
                   <div className="flex items-end justify-center gap-2 mb-3">
                     <span className="text-6xl lg:text-7xl font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">

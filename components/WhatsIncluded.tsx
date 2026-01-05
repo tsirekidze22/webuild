@@ -142,9 +142,9 @@ export default function WhatsIncluded() {
       <div className="absolute top-20 left-0 w-96 h-96 bg-gradient-to-br from-purple-100 to-blue-100 rounded-full blur-3xl opacity-30"></div>
       <div className="absolute bottom-20 right-0 w-96 h-96 bg-gradient-to-br from-blue-100 to-pink-100 rounded-full blur-3xl opacity-30"></div>
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="text-center mb-20">
-          <h2 className="text-5xl font-bold mb-6">
+      <div className="relative max-w-7xl mx-auto px-3 lg:px-8">
+        <div className="md:text-center mb-20">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">
             <span className="bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
               {t("features-title")}
             </span>

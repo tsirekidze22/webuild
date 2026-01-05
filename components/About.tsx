@@ -33,7 +33,7 @@ export default function About() {
         ></div>
       </div>
 
-      <div className="relative max-w-5xl mx-auto px-6 lg:px-8">
+      <div className="relative max-w-5xl mx-auto px-3 lg:px-8">
         {/* Badge */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full">
@@ -45,7 +45,7 @@ export default function About() {
         </div>
         {/* Main content */}
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold mb-8 text-white leading-tight">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white leading-tight">
             {t("about-title-1")}
             <br />
             <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">

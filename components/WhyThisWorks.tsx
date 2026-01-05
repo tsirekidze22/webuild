@@ -148,9 +148,9 @@ export default function WhyThisWorks() {
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-blue-100 to-purple-100 rounded-full blur-3xl opacity-20"></div>
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-pink-100 to-blue-100 rounded-full blur-3xl opacity-20"></div>
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="text-center mb-20">
-          <h2 className="text-5xl font-bold mb-6">
+      <div className="relative max-w-7xl mx-auto px-3 lg:px-8">
+        <div className="md:text-center mb-20">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">
             <span className="bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
               {t("benefits-title")}
             </span>

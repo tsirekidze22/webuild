@@ -31,7 +31,7 @@ export default function Header() {
             : "bg-transparent"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-3 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Logo - CONVERTED TO Link */}
             <Link href="/" className="flex items-center gap-3 group">
