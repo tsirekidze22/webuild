@@ -10,24 +10,6 @@ export default function Examples() {
 
   const examples = [
     {
-      id: 2,
-      title: t("examples-design-title"),
-      description: t("examples-design-desc"),
-      previewImage: "/assets/images/interior-design-desktop.jpg",
-      href: "https://designstudio.webuild.ge",
-      accentColor: "from-emerald-600/10 to-emerald-600/5",
-      textColor: "text-emerald-600",
-    },
-    {
-      id: 4,
-      title: t("examples-design-reno-title"),
-      description: t("examples-design-reno-desc"),
-      previewImage: "/assets/images/fullservice2.png",
-      href: "https://designspace.webuild.ge",
-      accentColor: "from-orange-600/10 to-orange-600/5",
-      textColor: "text-orange-600",
-    },
-    {
       id: 3,
       title: t("examples-renovation-title"),
       description: t("examples-renovation-desc"),
@@ -44,6 +26,25 @@ export default function Examples() {
       href: "https://spacecraft.webuild.ge",
       accentColor: "from-purple-600/10 to-purple-600/5",
       textColor: "text-purple-600",
+    },
+    {
+      id: 4,
+      title: t("examples-design-reno-title"),
+      description: t("examples-design-reno-desc"),
+      previewImage: "/assets/images/fullservice2.png",
+      href: "https://designspace.webuild.ge",
+      accentColor: "from-orange-600/10 to-orange-600/5",
+      textColor: "text-orange-600",
+    },
+
+    {
+      id: 2,
+      title: t("examples-design-title"),
+      description: t("examples-design-desc"),
+      previewImage: "/assets/images/interior-design-desktop.jpg",
+      href: "https://designstudio.webuild.ge",
+      accentColor: "from-emerald-600/10 to-emerald-600/5",
+      textColor: "text-emerald-600",
     },
   ];
 
