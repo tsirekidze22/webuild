@@ -46,7 +46,7 @@ export async function generateMetadata({
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: `${baseUrl}/${locale}`,
+        item: locale === "ka" ? baseUrl : `${baseUrl}/${locale}`,
       },
     ],
   };
@@ -83,7 +83,7 @@ export async function generateMetadata({
       canonical: locale === "ka" ? baseUrl : `${baseUrl}/${locale}`,
       languages: {
         en: `${baseUrl}/en`,
-        ka: `${baseUrl}/ka`,
+        ka: baseUrl,
       },
     },
     metadataBase: new URL(baseUrl),
@@ -97,6 +97,13 @@ export async function generateMetadata({
         children: JSON.stringify(breadcrumbJSON),
       },
     ],
+    icons: {
+      icon: [
+        { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+        { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      ],
+      shortcut: "/favicon.ico",
+    },
   };
 }
 
