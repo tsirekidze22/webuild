@@ -147,10 +147,10 @@ export default function Footer() {
                   />
                 </svg>
                 <a
-                  href="tel:+995555123456"
+                  href="tel:+995555799369"
                   className="hover:text-white transition-colors"
                 >
-                  +995 555 123 456
+                  +995 555 799 369
                 </a>
               </li>
             </ul>
