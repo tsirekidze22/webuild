@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 type StatProps = {
   value: string;
@@ -15,6 +16,13 @@ export default function Hero() {
 
   return (
     <section className="relative bg-white pt-32 md:pt-40 pb-20">
+      <Image
+        src="/assets/images/og-image.jpg"
+        alt="Webuild.ge - Web Development for Businesses"
+        width={1200}
+        height={630}
+        className="hidden"
+      />
       <div className="max-w-7xl mx-auto px-3 lg:px-8">
         <div className="flex justify-center items-center">
           <div className="max-w-4xl mx-auto text-center">
