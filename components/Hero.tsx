@@ -1,8 +1,5 @@
-"use client";
-
 import { useTranslations } from "next-intl";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import Image from "next/image";
 
 type StatProps = {
@@ -22,62 +19,47 @@ export default function Hero() {
         width={1200}
         height={630}
         className="hidden"
+        priority
       />
       <div className="max-w-7xl mx-auto px-3 lg:px-8">
         <div className="flex justify-center items-center">
           <div className="max-w-4xl mx-auto text-center">
             {/* Heading */}
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-gray-900"
-            >
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-gray-900">
               {t("hero-title")}
               <br />
               <span className="text-blue-600 font-semibold">
                 {t("hero-subtitle")}
               </span>
-            </motion.h1>
+            </h1>
 
             {/* Description */}
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-base sm:text-lg md:text-xl text-gray-600 mb-8 leading-relaxed"
-            >
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
               {t("hero-description")}
-            </motion.p>
+            </p>
 
-            {/* CTAs */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
-            >
+            {/* CTAs - Only animate these */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
               <Link
                 href="#examples"
-                className="px-8 py-4 bg-blue-600 text-white rounded-lg font-semibold text-center transition-all duration-300 hover:bg-blue-700 hover:scale-105 active:scale-95"
+                className="group px-8 py-4 bg-blue-600 text-white rounded-lg font-semibold text-center transition-all duration-300 hover:bg-blue-700 active:scale-95"
               >
-                {t("hero-cta-primary")}
+                <span className="inline-block group-hover:scale-105 transition-transform duration-300">
+                  {t("hero-cta-primary")}
+                </span>
               </Link>
               <Link
                 href="#contact"
-                className="px-8 py-4 border-2 border-gray-300 text-gray-900 rounded-lg font-semibold text-center transition-all duration-300 hover:border-blue-600 hover:text-blue-600 hover:scale-105 active:scale-95"
+                className="group px-8 py-4 border-2 border-gray-300 text-gray-900 rounded-lg font-semibold text-center transition-all duration-300 hover:border-blue-600 hover:text-blue-600 active:scale-95"
               >
-                {t("hero-cta-secondary")}
+                <span className="inline-block group-hover:scale-105 transition-transform duration-300">
+                  {t("hero-cta-secondary")}
+                </span>
               </Link>
-            </motion.div>
+            </div>
 
             {/* Stats */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex flex-col sm:flex-row justify-between gap-6 sm:gap-0 border-t pt-6 border-gray-200 text-center md:text-left"
-            >
+            <div className="flex flex-col sm:flex-row justify-between gap-6 sm:gap-0 border-t pt-6 border-gray-200 text-center md:text-left">
               <Stat
                 value={t("hero-stat-price")}
                 label={t("hero-stat-price-label")}
@@ -91,7 +73,7 @@ export default function Hero() {
                 label={t("hero-stat-contact-label")}
                 full
               />
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>

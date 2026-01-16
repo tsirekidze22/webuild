@@ -125,7 +125,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <head>
-        <title>Webuild.ge - ვებგვერდების დამზადება თბილისში</title>
+        <title>ციფრული გადაწყვეტილებები თქვენი ბიზნესის ზრდისთვის</title>
 
         {/* Local Business Schema */}
         <script
