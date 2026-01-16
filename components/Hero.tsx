@@ -27,7 +27,9 @@ export default function Hero() {
             >
               {t("hero-title")}
               <br />
-              <span className="text-blue-600">{t("hero-subtitle")}</span>
+              <span className="text-blue-600 font-semibold">
+                {t("hero-subtitle")}
+              </span>
             </motion.h1>
 
             {/* Description */}

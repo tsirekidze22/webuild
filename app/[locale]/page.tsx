@@ -15,12 +15,12 @@ export default function Home() {
     <>
       <Header />
       <Hero />
+      <About />
       <Examples />
       <WhatsIncluded />
       <WhyThisWorks />
       <Pricing />
       <FAQ />
-      <About />
       <Contact />
       <Footer />
     </>
