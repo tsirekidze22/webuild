@@ -124,6 +124,37 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
+      <head>
+        <title>Webuild.ge - ვებგვერდების დამზადება თბილისში</title>
+
+        {/* Local Business Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              name: "Webuild.ge",
+              url: "https://webuild.ge",
+              logo: "https://webuild.ge/logo.png",
+              telephone: "+995555799369",
+              email: "hello@webuild.ge",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "Mikheil Abramishvili Str",
+                addressLocality: "Tbilisi",
+                postalCode: "0144",
+                addressCountry: "GE",
+              },
+              sameAs: [
+                "https://www.facebook.com/webuildge",
+                "https://www.instagram.com/webuildge",
+                "https://www.linkedin.com/company/webuildge",
+              ],
+            }),
+          }}
+        />
+      </head>
       <body className={locale === "ka" ? noto.className : inter.className}>
         <NextIntlClientProvider messages={messages}>
           {children}
