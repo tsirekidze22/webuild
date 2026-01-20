@@ -1,8 +1,20 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy | Webuild",
+  description: "Privacy policy and data protection information for Webuild.",
+  robots: {
+    index: false,
+    follow: true,
+  },
+};
+
 export default function PrivacyPolicy() {
   const t = useTranslations("privacyPolicy");
+  const LAST_UPDATED = "January 3, 2026";
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-white via-blue-50 to-purple-50 py-24">
@@ -35,7 +47,7 @@ export default function PrivacyPolicy() {
           </h1>
 
           <div className="text-sm text-gray-500 mb-8">
-            {t("last-updated")}: {new Date().toLocaleDateString("ka-GE")}
+            {t("last-updated")}: {LAST_UPDATED}
           </div>
 
           <div className="prose prose-lg max-w-none">
