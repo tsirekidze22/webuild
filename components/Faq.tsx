@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import Script from "next/script";
+import { ChevronDown } from "lucide-react";
 
 export default function FAQ() {
   const t = useTranslations("faq");
@@ -54,29 +55,36 @@ export default function FAQ() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="border border-gray-200 rounded-2xl transition-all"
+              className="border border-gray-200 rounded-2xl overflow-hidden transition-all hover:border-gray-300 hover:shadow-sm"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 rounded-2xl"
+                className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors"
+                aria-expanded={openIndex === index}
               >
                 <span className="text-lg font-bold text-gray-900 pr-4">
                   {faq.q}
                 </span>
-                <span
-                  className={`transition-transform ${
+                <ChevronDown
+                  className={`flex-shrink-0 w-5 h-5 text-gray-500 transition-transform duration-300 ${
                     openIndex === index ? "rotate-180" : ""
                   }`}
-                >
-                  ⌄
-                </span>
+                />
               </button>
 
-              {openIndex === index && (
-                <div className="px-6 pb-6 text-gray-600 leading-relaxed">
-                  {faq.a}
+              <div
+                className={`grid transition-all duration-300 ease-in-out ${
+                  openIndex === index
+                    ? "grid-rows-[1fr] opacity-100"
+                    : "grid-rows-[0fr] opacity-0"
+                }`}
+              >
+                <div className="overflow-hidden">
+                  <div className="px-6 pb-6 text-gray-600 leading-relaxed">
+                    {faq.a}
+                  </div>
                 </div>
-              )}
+              </div>
             </div>
           ))}
         </div>
@@ -86,7 +94,7 @@ export default function FAQ() {
             {t("more-questions")}{" "}
             <Link
               href="#contact"
-              className="text-blue-600 underline underline-offset-4"
+              className="text-blue-600 underline underline-offset-4 hover:text-blue-700 transition-colors"
             >
               {t("contact-us")}
             </Link>
