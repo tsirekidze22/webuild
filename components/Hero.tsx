@@ -43,7 +43,6 @@ export default function Hero() {
 
       <div className="container-lg relative">
         <div className="max-w-4xl mx-auto text-center">
-
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 mb-8 bg-blue-50 border border-blue-100 rounded-full">
             <span className="w-1.5 h-1.5 rounded-full bg-blue-600 shrink-0" />
@@ -56,7 +55,9 @@ export default function Hero() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.1] tracking-tight text-slate-900 mb-5">
             {t("hero-title")}
             <br />
-            <span className="text-blue-600">{t("hero-subtitle")}</span>
+            <span className="relative inline-block text-blue-600">
+              {t("hero-subtitle")}
+            </span>
           </h1>
 
           {/* Sub-copy */}
@@ -66,21 +67,35 @@ export default function Hero() {
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-14">
-            <Link href="#examples" className="btn-primary text-[15px] px-6 py-3">
+            <Link
+              href="#examples"
+              className="btn-primary text-[15px] px-6 py-3"
+            >
               {t("hero-cta-primary")}
             </Link>
-            <Link href="#contact" className="btn-secondary text-[15px] px-6 py-3">
+            <Link
+              href="#contact"
+              className="btn-secondary text-[15px] px-6 py-3"
+            >
               {t("hero-cta-secondary")}
             </Link>
           </div>
 
           {/* Stats */}
           <div className="grid grid-cols-3 gap-px bg-slate-200 rounded-xl overflow-hidden border border-slate-200">
-            <Stat value={t("hero-stat-price")}   label={t("hero-stat-price-label")}   />
-            <Stat value={t("hero-stat-time")}    label={t("hero-stat-time-label")}    />
-            <Stat value={t("hero-stat-contact")} label={t("hero-stat-contact-label")} />
+            <Stat
+              value={t("hero-stat-price")}
+              label={t("hero-stat-price-label")}
+            />
+            <Stat
+              value={t("hero-stat-time")}
+              label={t("hero-stat-time-label")}
+            />
+            <Stat
+              value={t("hero-stat-contact")}
+              label={t("hero-stat-contact-label")}
+            />
           </div>
-
         </div>
       </div>
     </section>
@@ -93,7 +108,9 @@ function Stat({ value, label }: StatProps) {
       <div className="text-2xl md:text-3xl font-bold text-slate-900 mb-1 tracking-tight">
         {value}
       </div>
-      <div className="text-xs md:text-sm text-slate-500 font-medium">{label}</div>
+      <div className="text-xs md:text-sm text-slate-500 font-medium">
+        {label}
+      </div>
     </div>
   );
 }

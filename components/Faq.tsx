@@ -4,7 +4,6 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import Script from "next/script";
-import { ChevronDown } from "lucide-react";
 
 export default function FAQ() {
   const t = useTranslations("faq");
@@ -24,81 +23,102 @@ export default function FAQ() {
     mainEntity: faqs.map((item) => ({
       "@type": "Question",
       name: item.q,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: item.a,
-      },
+      acceptedAnswer: { "@type": "Answer", text: item.a },
     })),
   };
 
   return (
-    <section
-      id="faq"
-      className="bg-white py-20 md:py-32 border-t border-gray-100"
-    >
-      {/* FAQ Schema */}
+    <section id="faq" className="bg-white py-20 md:py-28 border-t border-slate-100">
       <Script
         id="faq-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <div className="max-w-3xl mx-auto px-3 lg:px-8">
-        <div className="md:text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-            {t("title")}
-          </h2>
-          <p className="text-lg text-gray-600">{t("subtitle")}</p>
-        </div>
+      <div className="container-lg">
+        <div className="lg:grid lg:grid-cols-[1fr_1.5fr] lg:gap-20 lg:items-start">
 
-        <div className="space-y-4">
-          {faqs.map((faq, index) => (
-            <div
-              key={index}
-              className="border border-gray-200 rounded-2xl overflow-hidden transition-all hover:border-gray-300 hover:shadow-sm"
-            >
-              <button
-                onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors"
-                aria-expanded={openIndex === index}
-              >
-                <span className="text-lg font-bold text-gray-900 pr-4">
-                  {faq.q}
-                </span>
-                <ChevronDown
-                  className={`flex-shrink-0 w-5 h-5 text-gray-500 transition-transform duration-300 ${
-                    openIndex === index ? "rotate-180" : ""
+          {/* Left — sticky heading */}
+          <div className="mb-12 lg:mb-0 lg:sticky lg:top-24">
+            <div className="section-label mb-5">{t("title")}</div>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-[1.1] mb-4">
+              {t("title")}
+            </h2>
+            <p className="text-lg text-slate-500 leading-relaxed mb-8">
+              {t("subtitle")}
+            </p>
+            <p className="text-[14px] text-slate-500">
+              {t("more-questions")}{" "}
+              <Link href="#contact" className="text-blue-600 hover:text-blue-700 font-semibold transition-colors">
+                {t("contact-us")}
+              </Link>
+            </p>
+          </div>
+
+          {/* Right — accordion */}
+          <div className="space-y-2">
+            {faqs.map((faq, i) => {
+              const isOpen = openIndex === i;
+              return (
+                <div
+                  key={i}
+                  className={`rounded-xl border transition-colors duration-150 overflow-hidden ${
+                    isOpen
+                      ? "border-blue-200 bg-blue-50"
+                      : "border-slate-200 bg-white hover:border-slate-300"
                   }`}
-                />
-              </button>
+                >
+                  <button
+                    onClick={() => setOpenIndex(isOpen ? null : i)}
+                    className="w-full flex items-start gap-4 px-6 py-5 text-left"
+                    aria-expanded={isOpen}
+                  >
+                    {/* Question number */}
+                    <span
+                      className={`shrink-0 mt-0.5 text-[11px] font-bold tracking-widest transition-colors duration-150 ${
+                        isOpen ? "text-blue-600" : "text-slate-300"
+                      }`}
+                    >
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
 
-              <div
-                className={`grid transition-all duration-300 ease-in-out ${
-                  openIndex === index
-                    ? "grid-rows-[1fr] opacity-100"
-                    : "grid-rows-[0fr] opacity-0"
-                }`}
-              >
-                <div className="overflow-hidden">
-                  <div className="px-6 pb-6 text-gray-600 leading-relaxed">
-                    {faq.a}
+                    <span
+                      className={`flex-1 text-[15px] font-bold leading-snug transition-colors duration-150 ${
+                        isOpen ? "text-blue-900" : "text-slate-900"
+                      }`}
+                    >
+                      {faq.q}
+                    </span>
+
+                    {/* Chevron */}
+                    <svg
+                      className={`shrink-0 w-4 h-4 mt-0.5 transition-all duration-200 ${
+                        isOpen ? "rotate-180 text-blue-600" : "text-slate-400"
+                      }`}
+                      fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                      strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round"
+                    >
+                      <path d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+
+                  {/* Answer */}
+                  <div
+                    className={`grid transition-all duration-300 ease-in-out ${
+                      isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                    }`}
+                  >
+                    <div className="overflow-hidden">
+                      <div className="px-6 pb-5 ml-9 text-[14px] text-slate-600 leading-relaxed">
+                        {faq.a}
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          ))}
-        </div>
+              );
+            })}
+          </div>
 
-        <div className="mt-16 p-8 bg-blue-50 rounded-3xl text-center">
-          <p className="text-gray-700 font-medium">
-            {t("more-questions")}{" "}
-            <Link
-              href="#contact"
-              className="text-blue-600 underline underline-offset-4 hover:text-blue-700 transition-colors"
-            >
-              {t("contact-us")}
-            </Link>
-          </p>
         </div>
       </div>
     </section>

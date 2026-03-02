@@ -98,13 +98,13 @@ export default function Examples() {
                       {ex.href}
                     </span>
                   </div>
-                  {/* Screenshot */}
-                  <div className="relative h-[calc(100%-34px)]">
+                  {/* Screenshot — pans from top to bottom on hover */}
+                  <div className="relative h-[calc(100%-34px)] overflow-hidden">
                     <Image
                       src={ex.previewImage}
                       alt={ex.title}
                       fill
-                      className="object-cover object-top"
+                      className="object-cover object-top group-hover:object-bottom transition-[object-position] duration-[4000ms] ease-in-out"
                       sizes="(max-width: 1024px) 100vw, 50vw"
                     />
                   </div>
