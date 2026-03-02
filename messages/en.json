@@ -85,7 +85,8 @@
     "hero-stat-time": "7 Days",
     "hero-stat-time-label": "Delivery Time",
     "hero-stat-contact": "1-on-1",
-    "hero-stat-contact-label": "Direct Developer Contact"
+    "hero-stat-contact-label": "Direct Developer Contact",
+    "hero-availability": "Currently accepting new projects"
   },
   "pricing": {
     "pricing-title": "Transparent Pricing",
@@ -167,7 +168,7 @@
     "footer-links-contact": "Contact",
     "footer-contact-title": "Contact",
     "footer-location": "Tbilisi, Georgia",
-    "footer-rights": "© 2025 Webuild.ge. All rights reserved.",
+    "footer-rights": "© 2026 Webuild.ge. All rights reserved.",
     "footer-privacy": "Privacy Policy",
     "footer-terms": "Terms & Conditions"
   },

@@ -49,14 +49,6 @@ export default function Hero() {
         <div className="grid md:grid-cols-2 lg:grid-cols-[1fr_1.05fr] gap-10 lg:gap-16 items-center pb-4 md:pb-6">
           {/* ── Left: copy ── */}
           <div>
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 mb-7 bg-blue-50 border border-blue-100 rounded-full">
-              <span className="w-1.5 h-1.5 rounded-full bg-blue-600 shrink-0" />
-              <span className="text-[11px] font-bold text-blue-700 uppercase tracking-[0.12em]">
-                webuild.ge
-              </span>
-            </div>
-
             {/* Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-[4rem] font-bold leading-[1.08] tracking-tight text-slate-900 mb-5">
               {t("hero-title")}
@@ -76,7 +68,7 @@ export default function Hero() {
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-3 mb-4">
+            <div className="flex flex-col sm:flex-row gap-3 mb-6">
               <Link
                 href="#examples"
                 className="btn-primary text-[15px] px-7 py-3.5"
@@ -97,10 +89,10 @@ export default function Hero() {
             {/* Glow */}
             <div
               aria-hidden
-              className="absolute -inset-6 rounded-3xl opacity-50 pointer-events-none"
+              className="absolute -inset-6 rounded-3xl opacity-30 pointer-events-none"
               style={{
                 background:
-                  "radial-gradient(ellipse at 60% 40%, #bfdbfe 0%, transparent 65%)",
+                  "radial-gradient(ellipse at 60% 40%, #dbeafe 0%, transparent 65%)",
               }}
             />
 

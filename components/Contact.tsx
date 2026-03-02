@@ -13,7 +13,15 @@ export default function Contact() {
       href: "tel:+995555799369",
       description: t("contact-phone-desc"),
       icon: (
-        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" className="w-5 h-5" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+        <svg
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          className="w-5 h-5"
+          strokeWidth={2}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
           <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
         </svg>
       ),
@@ -38,7 +46,15 @@ export default function Contact() {
       href: "mailto:hello@webuild.ge",
       description: t("contact-email-desc"),
       icon: (
-        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" className="w-5 h-5" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+        <svg
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          className="w-5 h-5"
+          strokeWidth={2}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
           <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
         </svg>
       ),
@@ -52,10 +68,9 @@ export default function Contact() {
     >
       <div className="container-lg">
         <div className="lg:grid lg:grid-cols-[1fr_1.1fr] lg:gap-20 lg:items-start">
-
           {/* ── Left: editorial headline ── */}
           <div className="mb-12 lg:mb-0">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-[1.1] mb-5">
+            <h2 className="text-2xl md:text-5xl font-bold text-slate-900 tracking-tight leading-[1.1] mb-5">
               {t("contact-title")}
             </h2>
             <p className="text-lg text-slate-500 leading-relaxed mb-8">
@@ -69,7 +84,9 @@ export default function Contact() {
                 <div className="text-[13px] font-semibold text-slate-900 leading-none mb-0.5">
                   {t("contact-response-title")}
                 </div>
-                <div className="text-[12px] text-slate-500">{t("contact-response-desc")}</div>
+                <div className="text-[12px] text-slate-500">
+                  {t("contact-response-desc")}
+                </div>
               </div>
             </div>
           </div>
@@ -97,21 +114,26 @@ export default function Contact() {
                   <div className="text-[15px] font-bold text-slate-900 truncate">
                     {m.value}
                   </div>
-                  <div className="text-[12px] text-slate-400 mt-0.5">{m.description}</div>
+                  <div className="text-[12px] text-slate-400 mt-0.5">
+                    {m.description}
+                  </div>
                 </div>
 
                 {/* Arrow */}
                 <svg
                   className="shrink-0 w-4 h-4 text-slate-300 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-all duration-150"
-                  fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                  strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  strokeWidth={2.5}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 >
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
               </a>
             ))}
           </div>
-
         </div>
       </div>
     </section>

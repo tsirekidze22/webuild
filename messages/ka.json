@@ -85,7 +85,8 @@
     "hero-stat-time": "7 დღე",
     "hero-stat-time-label": "დამზადების ვადა",
     "hero-stat-contact": "1-ზე-1",
-    "hero-stat-contact-label": "პირდაპირი კავშირი დეველოპერთან"
+    "hero-stat-contact-label": "პირდაპირი კავშირი დეველოპერთან",
+    "hero-availability": "ახლა ვიღებთ ახალ პროექტებს"
   },
   "pricing": {
     "pricing-title": "გამჭვირვალე ტარიფი",
@@ -167,7 +168,7 @@
     "footer-links-contact": "კონტაქტი",
     "footer-contact-title": "კონტაქტი",
     "footer-location": "თბილისი, საქართველო",
-    "footer-rights": "© 2025 Webuild.ge. ყველა უფლება დაცულია.",
+    "footer-rights": "© 2026 Webuild.ge. ყველა უფლება დაცულია.",
     "footer-privacy": "კონფიდენციალურობა",
     "footer-terms": "წესები და პირობები"
   },
