@@ -50,7 +50,6 @@ export default function WhyThisWorks() {
 
           {/* Left — sticky header */}
           <div className="mb-12 lg:mb-0 lg:sticky lg:top-24">
-            <div className="section-label mb-5">{t("benefits-title")}</div>
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-[1.1] mb-5">
               {t("benefits-title")}
             </h2>

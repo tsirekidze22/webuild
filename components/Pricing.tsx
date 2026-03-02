@@ -20,7 +20,6 @@ export default function Pricing() {
       <div className="container-lg">
         {/* Header */}
         <div className="max-w-2xl mx-auto text-center mb-14">
-          <div className="section-label mx-auto mb-5">{t("pricing-title")}</div>
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-[1.1] mb-4">
             {t("pricing-title")}
           </h2>

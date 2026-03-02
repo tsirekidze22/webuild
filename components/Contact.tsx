@@ -55,7 +55,6 @@ export default function Contact() {
 
           {/* ── Left: editorial headline ── */}
           <div className="mb-12 lg:mb-0">
-            <div className="section-label mb-6">{t("contact-title")}</div>
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-[1.1] mb-5">
               {t("contact-title")}
             </h2>

@@ -52,7 +52,6 @@ export default function Examples() {
 
         {/* Section header */}
         <div className="max-w-2xl mb-14 md:mb-18">
-          <div className="section-label mb-5">{t("examples-title")}</div>
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-[1.1] mb-4">
             {t("examples-title")}
           </h2>

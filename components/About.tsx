@@ -34,15 +34,6 @@ export default function About() {
       </div>
 
       <div className="relative max-w-5xl mx-auto px-3 lg:px-8">
-        {/* Badge */}
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full">
-            <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-            <span className="text-sm font-semibold text-blue-300">
-              {t("about-badge")}
-            </span>
-          </div>
-        </div>
         {/* Main content */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white leading-tight">

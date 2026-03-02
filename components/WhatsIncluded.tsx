@@ -47,7 +47,6 @@ export default function WhatsIncluded() {
 
         {/* Header */}
         <div className="max-w-2xl mb-14">
-          <div className="section-label mb-5">{t("features-title")}</div>
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-[1.1] mb-4">
             {t("features-title")}
           </h2>
