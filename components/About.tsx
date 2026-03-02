@@ -80,14 +80,14 @@ export default function About() {
           </div>
         </div>
         {/* Stats/highlights */}
-        <div className="grid md:grid-cols-3 gap-8 mt-20">
+        <div className="grid md:grid-cols-3 gap-6 mt-20">
           <div className="group relative">
             <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all"></div>
-            <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 text-center group-hover:border-white/20 transition-all">
-              <div className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-3">
+            <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 text-center group-hover:border-white/20 transition-all">
+              <div className="text-2xl lg:text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-3 break-words">
                 {t("about-stat-1-value")}
               </div>
-              <div className="text-gray-400 font-medium">
+              <div className="text-gray-400 font-medium text-sm lg:text-base">
                 {t("about-stat-1-label")}
               </div>
             </div>
@@ -95,11 +95,11 @@ export default function About() {
 
           <div className="group relative">
             <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-pink-600/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all"></div>
-            <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 text-center group-hover:border-white/20 transition-all">
-              <div className="text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-3">
+            <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 text-center group-hover:border-white/20 transition-all">
+              <div className="text-2xl lg:text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-3 break-words">
                 {t("about-stat-2-value")}
               </div>
-              <div className="text-gray-400 font-medium">
+              <div className="text-gray-400 font-medium text-sm lg:text-base">
                 {t("about-stat-2-label")}
               </div>
             </div>
@@ -107,11 +107,11 @@ export default function About() {
 
           <div className="group relative">
             <div className="absolute inset-0 bg-gradient-to-br from-pink-600/20 to-blue-600/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all"></div>
-            <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 text-center group-hover:border-white/20 transition-all">
-              <div className="text-4xl font-bold bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text text-transparent mb-3">
+            <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 text-center group-hover:border-white/20 transition-all">
+              <div className="text-2xl lg:text-3xl font-bold bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text text-transparent mb-3 break-words">
                 {t("about-stat-3-value")}
               </div>
-              <div className="text-gray-400 font-medium">
+              <div className="text-gray-400 font-medium text-sm lg:text-base">
                 {t("about-stat-3-label")}
               </div>
             </div>

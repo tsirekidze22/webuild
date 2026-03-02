@@ -5,14 +5,14 @@ import Image from "next/image";
 type StatProps = {
   value: string;
   label: string;
-  full?: boolean;
 };
 
 export default function Hero() {
   const t = useTranslations("hero");
 
   return (
-    <section className="relative bg-white pt-32 md:pt-40 pb-20">
+    <section className="relative bg-white overflow-hidden pt-28 md:pt-36 pb-20 md:pb-28">
+      {/* Preload OG image (hidden, SEO) */}
       <Image
         src="/assets/images/og-image.jpg"
         alt="Webuild.ge - Web Development for Businesses"
@@ -21,75 +21,79 @@ export default function Hero() {
         className="hidden"
         priority
       />
-      <div className="max-w-7xl mx-auto px-3 lg:px-8">
-        <div className="flex justify-center items-center">
-          <div className="max-w-4xl mx-auto text-center">
-            {/* Heading */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-gray-900">
-              {t("hero-title")}
-              <br />
-              <span className="text-blue-600 font-semibold">
-                {t("hero-subtitle")}
-              </span>
-            </h1>
 
-            {/* Description */}
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
-              {t("hero-description")}
-            </p>
+      {/* Subtle grid background */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          backgroundImage:
+            "linear-gradient(to bottom, #f8fafc 0%, #ffffff 60%)",
+        }}
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-[0.035]"
+        style={{
+          backgroundImage:
+            "linear-gradient(#0f172a 1px, transparent 1px), linear-gradient(90deg, #0f172a 1px, transparent 1px)",
+          backgroundSize: "40px 40px",
+        }}
+      />
 
-            {/* CTAs - Only animate these */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Link
-                href="#examples"
-                className="group px-8 py-4 bg-blue-600 text-white rounded-lg font-semibold text-center transition-all duration-300 hover:bg-blue-700 active:scale-95"
-              >
-                <span className="inline-block group-hover:scale-105 transition-transform duration-300">
-                  {t("hero-cta-primary")}
-                </span>
-              </Link>
-              <Link
-                href="#contact"
-                className="group px-8 py-4 border-2 border-gray-300 text-gray-900 rounded-lg font-semibold text-center transition-all duration-300 hover:border-blue-600 hover:text-blue-600 active:scale-95"
-              >
-                <span className="inline-block group-hover:scale-105 transition-transform duration-300">
-                  {t("hero-cta-secondary")}
-                </span>
-              </Link>
-            </div>
+      <div className="container-lg relative">
+        <div className="max-w-4xl mx-auto text-center">
 
-            {/* Stats */}
-            <div className="flex flex-col sm:flex-row justify-between gap-6 sm:gap-0 border-t pt-6 border-gray-200 text-center md:text-left">
-              <Stat
-                value={t("hero-stat-price")}
-                label={t("hero-stat-price-label")}
-              />
-              <Stat
-                value={t("hero-stat-time")}
-                label={t("hero-stat-time-label")}
-              />
-              <Stat
-                value={t("hero-stat-contact")}
-                label={t("hero-stat-contact-label")}
-                full
-              />
-            </div>
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 mb-8 bg-blue-50 border border-blue-100 rounded-full">
+            <span className="w-1.5 h-1.5 rounded-full bg-blue-600 shrink-0" />
+            <span className="text-xs font-semibold text-blue-700 uppercase tracking-widest">
+              webuild.ge
+            </span>
           </div>
+
+          {/* Headline */}
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.1] tracking-tight text-slate-900 mb-5">
+            {t("hero-title")}
+            <br />
+            <span className="text-blue-600">{t("hero-subtitle")}</span>
+          </h1>
+
+          {/* Sub-copy */}
+          <p className="text-lg md:text-xl text-slate-500 leading-relaxed max-w-2xl mx-auto mb-10">
+            {t("hero-description")}
+          </p>
+
+          {/* CTAs */}
+          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-14">
+            <Link href="#examples" className="btn-primary text-[15px] px-6 py-3">
+              {t("hero-cta-primary")}
+            </Link>
+            <Link href="#contact" className="btn-secondary text-[15px] px-6 py-3">
+              {t("hero-cta-secondary")}
+            </Link>
+          </div>
+
+          {/* Stats */}
+          <div className="grid grid-cols-3 gap-px bg-slate-200 rounded-xl overflow-hidden border border-slate-200">
+            <Stat value={t("hero-stat-price")}   label={t("hero-stat-price-label")}   />
+            <Stat value={t("hero-stat-time")}    label={t("hero-stat-time-label")}    />
+            <Stat value={t("hero-stat-contact")} label={t("hero-stat-contact-label")} />
+          </div>
+
         </div>
       </div>
     </section>
   );
 }
 
-/* ---------- Helpers ---------- */
-
-function Stat({ value, label, full = false }: StatProps) {
+function Stat({ value, label }: StatProps) {
   return (
-    <div className={full ? "col-span-2 sm:col-span-3" : ""}>
-      <div className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">
+    <div className="bg-white px-4 py-5 text-center">
+      <div className="text-2xl md:text-3xl font-bold text-slate-900 mb-1 tracking-tight">
         {value}
       </div>
-      <div className="text-sm md:text-base text-gray-600">{label}</div>
+      <div className="text-xs md:text-sm text-slate-500 font-medium">{label}</div>
     </div>
   );
 }
