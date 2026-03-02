@@ -1,244 +1,101 @@
-"use client";
-
-import { useState } from "react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 
+const icons = [
+  // 1 — lightning
+  <svg key={1} fill="none" stroke="currentColor" viewBox="0 0 24 24" className="w-5 h-5" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+    <path d="M13 10V3L4 14h7v7l9-11h-7z" />
+  </svg>,
+  // 2 — check circle
+  <svg key={2} fill="none" stroke="currentColor" viewBox="0 0 24 24" className="w-5 h-5" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+  </svg>,
+  // 3 — document
+  <svg key={3} fill="none" stroke="currentColor" viewBox="0 0 24 24" className="w-5 h-5" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+    <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+  </svg>,
+  // 4 — location
+  <svg key={4} fill="none" stroke="currentColor" viewBox="0 0 24 24" className="w-5 h-5" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+    <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+    <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+  </svg>,
+  // 5 — user
+  <svg key={5} fill="none" stroke="currentColor" viewBox="0 0 24 24" className="w-5 h-5" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+    <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+  </svg>,
+  // 6 — currency
+  <svg key={6} fill="none" stroke="currentColor" viewBox="0 0 24 24" className="w-5 h-5" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+  </svg>,
+];
+
 export default function WhyThisWorks() {
   const t = useTranslations("whyThisWorks");
-  const [hoveredId, setHoveredId] = useState<number | null>(null);
 
   const benefits = [
-    {
-      id: 1,
-      title: t("benefits-f1-title"),
-      description: t("benefits-f1-desc"),
-      icon: (
-        <svg
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          className="w-7 h-7"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M13 10V3L4 14h7v7l9-11h-7z"
-          />
-        </svg>
-      ),
-      gradient: "from-yellow-400 to-orange-500",
-    },
-    {
-      id: 2,
-      title: t("benefits-f2-title"),
-      description: t("benefits-f2-desc"),
-      icon: (
-        <svg
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          className="w-7 h-7"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-          />
-        </svg>
-      ),
-      gradient: "from-green-400 to-emerald-500",
-    },
-    {
-      id: 3,
-      title: t("benefits-f3-title"),
-      description: t("benefits-f3-desc"),
-      icon: (
-        <svg
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          className="w-7 h-7"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-          />
-        </svg>
-      ),
-      gradient: "from-blue-400 to-indigo-500",
-    },
-    {
-      id: 4,
-      title: t("benefits-f4-title"),
-      description: t("benefits-f4-desc"),
-      icon: (
-        <svg
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          className="w-7 h-7"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-          />
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-          />
-        </svg>
-      ),
-      gradient: "from-purple-400 to-pink-500",
-    },
-    {
-      id: 5,
-      title: t("benefits-f5-title"),
-      description: t("benefits-f5-desc"),
-      icon: (
-        <svg
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          className="w-7 h-7"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-          />
-        </svg>
-      ),
-      gradient: "from-cyan-400 to-blue-500",
-    },
-    {
-      id: 6,
-      title: t("benefits-f6-title"),
-      description: t("benefits-f6-desc"),
-      icon: (
-        <svg
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          className="w-7 h-7"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-          />
-        </svg>
-      ),
-      gradient: "from-rose-400 to-red-500",
-    },
+    { title: t("benefits-f1-title"), description: t("benefits-f1-desc") },
+    { title: t("benefits-f2-title"), description: t("benefits-f2-desc") },
+    { title: t("benefits-f3-title"), description: t("benefits-f3-desc") },
+    { title: t("benefits-f4-title"), description: t("benefits-f4-desc") },
+    { title: t("benefits-f5-title"), description: t("benefits-f5-desc") },
+    { title: t("benefits-f6-title"), description: t("benefits-f6-desc") },
   ];
 
   return (
-    <section className="relative py-16 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-blue-100 to-purple-100 rounded-full blur-3xl opacity-20"></div>
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-pink-100 to-blue-100 rounded-full blur-3xl opacity-20"></div>
+    <section className="bg-slate-50 py-20 md:py-28">
+      <div className="container-lg">
 
-      <div className="relative max-w-7xl mx-auto px-3 lg:px-8">
-        <div className="md:text-center mb-20">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+        {/* Two-col layout: sticky heading left, list right */}
+        <div className="lg:grid lg:grid-cols-[1fr_1.4fr] lg:gap-20 lg:items-start">
+
+          {/* Left — sticky header */}
+          <div className="mb-12 lg:mb-0 lg:sticky lg:top-24">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-[1.1] mb-5">
               {t("benefits-title")}
-            </span>
-          </h2>
-
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            {t("benefits-subtitle")}
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {benefits.map((benefit, index) => (
-            <div
-              key={benefit.id}
-              onMouseEnter={() => setHoveredId(benefit.id)}
-              onMouseLeave={() => setHoveredId(null)}
-              className={`group relative transition-all duration-500 ${
-                hoveredId === benefit.id ? "scale-105 z-10" : ""
-              }`}
-            >
-              <div className="relative h-full bg-white rounded-2xl p-8 border border-gray-200 transition-all duration-500 hover:shadow-2xl hover:border-transparent">
-                <div
-                  className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${benefit.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl`}
-                ></div>
-
-                <div
-                  className={`relative w-16 h-16 rounded-2xl bg-gradient-to-br ${
-                    benefit.gradient
-                  } flex items-center justify-center mb-6 transform transition-all duration-500 ${
-                    hoveredId === benefit.id ? "scale-110 rotate-3" : ""
-                  }`}
-                >
-                  <div className="text-white">{benefit.icon}</div>
-                  <div
-                    className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${benefit.gradient} animate-ping opacity-0 group-hover:opacity-20`}
-                  ></div>
-                </div>
-
-                <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:bg-gradient-to-r group-hover:from-gray-900 group-hover:to-gray-700 group-hover:bg-clip-text group-hover:text-transparent transition-all">
-                  {benefit.title}
-                </h3>
-
-                <p className="text-gray-600 leading-relaxed">
-                  {benefit.description}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-20 text-center">
-          <div className="inline-block relative group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-2xl blur-lg opacity-25 group-hover:opacity-50 transition-opacity"></div>
-            <Link
-              href="#contact"
-              className="relative px-10 py-5 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-2xl font-bold text-lg inline-flex items-center gap-3 hover:shadow-2xl hover:scale-105 transition-all duration-300"
-            >
+            </h2>
+            <p className="text-lg text-slate-500 leading-relaxed mb-8">
+              {t("benefits-subtitle")}
+            </p>
+            <Link href="#contact" className="btn-primary inline-flex">
               {t("benefits-cta")}
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
+              <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </Link>
           </div>
-        </div>
-      </div>
 
-      <style jsx>{`
-        @keyframes ping {
-          75%,
-          100% {
-            transform: scale(1.5);
-            opacity: 0;
-          }
-        }
-        .animate-ping {
-          animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
-        }
-      `}</style>
+          {/* Right — numbered list */}
+          <div className="divide-y divide-slate-200">
+            {benefits.map((b, i) => (
+              <div
+                key={i}
+                className="group flex items-start gap-5 py-7 first:pt-0 last:pb-0 hover:bg-white rounded-xl px-5 -mx-5 transition-colors duration-150"
+              >
+                {/* Number */}
+                <span className="shrink-0 mt-0.5 w-8 h-8 rounded-lg bg-slate-100 group-hover:bg-blue-600 flex items-center justify-center text-[11px] font-bold text-slate-400 group-hover:text-white transition-colors duration-150">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+
+                {/* Content */}
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2.5 mb-1.5">
+                    <span className="text-slate-400 group-hover:text-blue-600 transition-colors duration-150">
+                      {icons[i]}
+                    </span>
+                    <h3 className="text-[15px] font-bold text-slate-900 leading-snug">
+                      {b.title}
+                    </h3>
+                  </div>
+                  <p className="text-[14px] text-slate-500 leading-relaxed">
+                    {b.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+      </div>
     </section>
   );
 }
