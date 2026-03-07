@@ -138,7 +138,7 @@ export default async function LocaleLayout({
               url: "https://webuild.ge",
               logo: "https://webuild.ge/logo.png",
               telephone: "+995555799369",
-              email: "hello@webuild.ge",
+              // email: "hello@webuild.ge",
               address: {
                 "@type": "PostalAddress",
                 streetAddress: "Mikheil Abramishvili Str",
