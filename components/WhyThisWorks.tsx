@@ -2,80 +2,74 @@ import { useTranslations } from "next-intl";
 import Link from "next/link";
 
 const icons = [
-  // 1 - lightning
   <svg
     key={1}
     fill="none"
     stroke="currentColor"
     viewBox="0 0 24 24"
-    className="w-5 h-5"
-    strokeWidth={2}
+    className="w-4.5 h-4.5"
+    strokeWidth={1.75}
     strokeLinecap="round"
     strokeLinejoin="round"
   >
     <path d="M13 10V3L4 14h7v7l9-11h-7z" />
   </svg>,
-  // 2 - check circle
   <svg
     key={2}
     fill="none"
     stroke="currentColor"
     viewBox="0 0 24 24"
-    className="w-5 h-5"
-    strokeWidth={2}
+    className="w-4.5 h-4.5"
+    strokeWidth={1.75}
     strokeLinecap="round"
     strokeLinejoin="round"
   >
     <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
   </svg>,
-  // 3 - document
   <svg
     key={3}
     fill="none"
     stroke="currentColor"
     viewBox="0 0 24 24"
-    className="w-5 h-5"
-    strokeWidth={2}
+    className="w-4.5 h-4.5"
+    strokeWidth={1.75}
     strokeLinecap="round"
     strokeLinejoin="round"
   >
     <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
   </svg>,
-  // 4 - location
   <svg
     key={4}
     fill="none"
     stroke="currentColor"
     viewBox="0 0 24 24"
-    className="w-5 h-5"
-    strokeWidth={2}
+    className="w-4.5 h-4.5"
+    strokeWidth={1.75}
     strokeLinecap="round"
     strokeLinejoin="round"
   >
     <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
     <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
   </svg>,
-  // 5 - user
   <svg
     key={5}
     fill="none"
     stroke="currentColor"
     viewBox="0 0 24 24"
-    className="w-5 h-5"
-    strokeWidth={2}
+    className="w-4.5 h-4.5"
+    strokeWidth={1.75}
     strokeLinecap="round"
     strokeLinejoin="round"
   >
     <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
   </svg>,
-  // 6 - currency
   <svg
     key={6}
     fill="none"
     stroke="currentColor"
     viewBox="0 0 24 24"
-    className="w-5 h-5"
-    strokeWidth={2}
+    className="w-4.5 h-4.5"
+    strokeWidth={1.75}
     strokeLinecap="round"
     strokeLinejoin="round"
   >
@@ -96,22 +90,49 @@ export default function WhyThisWorks() {
   ];
 
   return (
-    <section className="bg-slate-50 py-20 md:py-28">
+    <section className="bg-white py-24 md:py-32">
       <div className="container-lg">
-        {/* Two-col layout: sticky heading left, list right */}
-        <div className="lg:grid lg:grid-cols-[1fr_1.4fr] lg:gap-20 lg:items-start">
-          {/* Left - sticky header */}
-          <div className="mb-12 lg:mb-0 lg:sticky lg:top-24">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-[1.1] mb-5">
+        <div className="lg:grid lg:grid-cols-[1fr_1.5fr] lg:gap-24 lg:items-start">
+          {/* Left - sticky heading */}
+          <div className="mb-14 lg:mb-0 lg:sticky lg:top-24">
+            <div className="flex items-center gap-2.5 mb-5">
+              <div className="h-px w-6" style={{ background: "#2563eb" }} />
+              <span
+                className="text-[11.5px] font-bold uppercase tracking-[0.12em]"
+                style={{ color: "#2563eb" }}
+              >
+                Why Webuild
+              </span>
+            </div>
+            <h2
+              className="font-bold tracking-tight leading-[1.1] mb-5"
+              style={{
+                fontSize: "clamp(1.9rem, 4vw, 3rem)",
+                letterSpacing: "-0.02em",
+                color: "#0f172a",
+              }}
+            >
               {t("benefits-title")}
             </h2>
-            <p className="text-lg text-slate-500 leading-relaxed mb-8">
+            <p
+              className="text-[1.0625rem] leading-relaxed mb-8"
+              style={{ color: "#64748b" }}
+            >
               {t("benefits-subtitle")}
             </p>
-            <Link href="#contact" className="btn-primary inline-flex">
+            <Link
+              href="#contact"
+              className="inline-flex items-center gap-2 px-6 py-3 text-[14.5px] font-semibold rounded-lg text-white transition-all duration-200 hover:-translate-y-px hover:shadow-lg"
+              style={{
+                background:
+                  "linear-gradient(135deg, #3b82f6, #2563eb, #1d4ed8)",
+                boxShadow:
+                  "0 1px 0 rgba(255,255,255,0.1) inset, 0 4px 14px rgba(37,99,235,0.3)",
+              }}
+            >
               {t("benefits-cta")}
               <svg
-                className="w-4 h-4 ml-2"
+                className="w-4 h-4"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -124,29 +145,47 @@ export default function WhyThisWorks() {
             </Link>
           </div>
 
-          {/* Right - numbered list */}
-          <div className="divide-y divide-slate-200">
+          {/* Right - benefit list */}
+          <div>
             {benefits.map((b, i) => (
               <div
                 key={i}
-                className="group flex items-start gap-5 py-7 first:pt-0 last:pb-0 hover:bg-white rounded-xl px-5 -mx-5 transition-colors duration-150"
+                className="group flex items-start gap-5 py-6 transition-all duration-150"
+                style={{
+                  borderBottom:
+                    i < benefits.length - 1 ? "1px solid #f1f5f9" : "none",
+                }}
               >
-                {/* Number */}
-                <span className="shrink-0 mt-0.5 w-8 h-8 rounded-lg bg-slate-100 group-hover:bg-blue-600 flex items-center justify-center text-[11px] font-bold text-slate-400 group-hover:text-white transition-colors duration-150">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
+                {/* Number badge */}
+                <div
+                  className="shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-[11px] font-bold transition-colors duration-200 group-hover:bg-blue-600"
+                  style={{ background: "#f1f5f9", color: "#94a3b8" }}
+                >
+                  <span className="group-hover:text-white transition-colors duration-200">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                </div>
 
                 {/* Content */}
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2.5 mb-1.5">
-                    <span className="text-slate-400 group-hover:text-blue-600 transition-colors duration-150">
+                    <span
+                      className="transition-colors duration-200 group-hover:text-blue-600"
+                      style={{ color: "#94a3b8" }}
+                    >
                       {icons[i]}
                     </span>
-                    <h3 className="text-[15px] font-bold text-slate-900 leading-snug">
+                    <h3
+                      className="text-[15px] font-bold leading-snug"
+                      style={{ color: "#0f172a" }}
+                    >
                       {b.title}
                     </h3>
                   </div>
-                  <p className="text-[14px] text-slate-500 leading-relaxed">
+                  <p
+                    className="text-[13.5px] leading-relaxed ml-7"
+                    style={{ color: "#64748b" }}
+                  >
                     {b.description}
                   </p>
                 </div>

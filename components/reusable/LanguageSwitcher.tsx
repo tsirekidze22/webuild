@@ -5,14 +5,13 @@ import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import Image from "next/image";
 
-const LanguageSwitcher = () => {
+const LanguageSwitcher = ({ dark = false }: { dark?: boolean }) => {
   const [isOpen, setIsOpen] = useState(false);
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
 
   const handleLanguageSwitch = (newLocale: "en" | "ka") => {
-    // Navigate to the same page with new locale
     router.replace(pathname, { locale: newLocale });
     setIsOpen(false);
   };
@@ -36,7 +35,11 @@ const LanguageSwitcher = () => {
     <div className="relative">
       {/* Trigger */}
       <button
-        className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors cursor-pointer"
+        className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-md transition-colors cursor-pointer ${
+          dark
+            ? "text-white/75 hover:text-white hover:bg-white/10"
+            : "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
+        }`}
         onClick={() => setIsOpen(!isOpen)}
         onBlur={() => setTimeout(() => setIsOpen(false), 200)}
         aria-haspopup="listbox"

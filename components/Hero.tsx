@@ -1,21 +1,59 @@
 "use client";
 
-import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 
-type StatProps = {
-  value: string;
-  label: string;
-};
-
 export default function Hero() {
   const t = useTranslations("hero");
-  const [previewHovered, setPreviewHovered] = useState(false);
+
+  const trustItems = [
+    t("hero-stat-price-label") + " - " + t("hero-stat-price"),
+    t("hero-stat-time") + " " + t("hero-stat-time-label"),
+    t("hero-stat-contact-label"),
+  ];
 
   return (
-    <section className="relative bg-white overflow-hidden pt-24 md:pt-28 pb-6">
+    <section
+      className="relative overflow-hidden min-h-[100dvh] flex flex-col"
+      style={{
+        background:
+          "linear-gradient(180deg, #020817 0%, #060f1e 60%, #0a1628 100%)",
+      }}
+    >
+      <style>{`
+        @keyframes orb-1 {
+          0%, 100% { transform: translateX(-50%) translateY(0px) scale(1); }
+          33%       { transform: translateX(-50%) translateY(-40px) scale(1.06); }
+          66%       { transform: translateX(-50%) translateY(18px) scale(0.96); }
+        }
+        @keyframes orb-2 {
+          0%, 100% { transform: translateY(0px) scale(1); }
+          50%       { transform: translateY(-28px) scale(1.1); }
+        }
+        @keyframes orb-3 {
+          0%, 100% { transform: translateY(0px) scale(1); }
+          50%       { transform: translateY(32px) scale(0.94); }
+        }
+        @keyframes fade-up {
+          from { opacity: 0; transform: translateY(22px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes scroll-cue {
+          0%, 100% { transform: translateY(0); opacity: 0.35; }
+          50%       { transform: translateY(7px); opacity: 0.85; }
+        }
+        @keyframes badge-dot {
+          0%, 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.5); }
+          50%       { box-shadow: 0 0 0 5px rgba(34,197,94,0); }
+        }
+        .fu-0 { animation: fade-up 0.75s cubic-bezier(0.22,1,0.36,1) 0.05s both; }
+        .fu-1 { animation: fade-up 0.75s cubic-bezier(0.22,1,0.36,1) 0.18s both; }
+        .fu-2 { animation: fade-up 0.75s cubic-bezier(0.22,1,0.36,1) 0.30s both; }
+        .fu-3 { animation: fade-up 0.75s cubic-bezier(0.22,1,0.36,1) 0.42s both; }
+        .fu-4 { animation: fade-up 0.75s cubic-bezier(0.22,1,0.36,1) 0.52s both; }
+      `}</style>
+
       {/* SEO preload */}
       <Image
         src="/assets/images/og-image.jpg"
@@ -26,180 +64,187 @@ export default function Hero() {
         priority
       />
 
+      {/* ── Animated orbs ── */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 overflow-hidden"
+      >
+        <div
+          className="absolute"
+          style={{
+            top: "-18%",
+            left: "50%",
+            width: "1000px",
+            height: "750px",
+            animation: "orb-1 16s ease-in-out infinite",
+            background:
+              "radial-gradient(ellipse at center top, rgba(37,99,235,0.22) 0%, rgba(37,99,235,0.06) 45%, transparent 70%)",
+          }}
+        />
+        <div
+          className="absolute"
+          style={{
+            top: "28%",
+            left: "-10%",
+            width: "580px",
+            height: "580px",
+            animation: "orb-2 20s ease-in-out infinite",
+            background:
+              "radial-gradient(ellipse at center, rgba(29,78,216,0.10) 0%, transparent 65%)",
+          }}
+        />
+        <div
+          className="absolute"
+          style={{
+            top: "12%",
+            right: "-6%",
+            width: "480px",
+            height: "480px",
+            animation: "orb-3 24s ease-in-out infinite",
+            background:
+              "radial-gradient(ellipse at center, rgba(139,92,246,0.09) 0%, transparent 65%)",
+          }}
+        />
+      </div>
+
+      {/* ── Dot grid ── */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
         style={{
           backgroundImage:
-            "linear-gradient(to bottom, #f8fafc 0%, #ffffff 55%)",
-        }}
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.032]"
-        style={{
-          backgroundImage:
-            "linear-gradient(#0f172a 1px, transparent 1px), linear-gradient(90deg, #0f172a 1px, transparent 1px)",
-          backgroundSize: "44px 44px",
+            "radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px)",
+          backgroundSize: "32px 32px",
         }}
       />
 
-      <div className="container-lg relative">
-        {/* ── Two-column split ── */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-[1fr_1.05fr] gap-10 lg:gap-16 items-center pb-4 md:pb-6">
-          {/* ── Left: copy ── */}
-          <div>
-            {/* Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-[4rem] font-bold leading-[1.08] tracking-tight text-slate-900 mb-5">
-              {t("hero-title")}
-              <br />
-              <span className="relative inline-block text-blue-600">
-                {t("hero-subtitle")}
-                <span
-                  aria-hidden
-                  className="pointer-events-none absolute inset-x-0 bottom-[3px] h-[7px] rounded-full bg-blue-100 -z-10"
-                />
-              </span>
-            </h1>
+      {/* ── Content ── */}
+      <div className="container-lg relative flex-1 flex flex-col items-center justify-center pt-24 pb-28">
+        <div className="max-w-[900px] mx-auto text-center">
+          {/* Headline */}
+          <h1
+            className="fu-1 font-bold tracking-tight mb-5"
+            style={{
+              fontSize: "clamp(2.4rem, 6vw, 4.25rem)",
+              lineHeight: 1.08,
+              color: "#f1f5f9",
+              letterSpacing: "-0.025em",
+            }}
+          >
+            {t("hero-title")}
+            <br />
+            <span
+              style={{
+                backgroundImage:
+                  "linear-gradient(90deg, #60a5fa 0%, #818cf8 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}
+            >
+              {t("hero-subtitle")}
+            </span>
+          </h1>
 
-            {/* Description */}
-            <p className="text-lg text-slate-500 leading-relaxed mb-8 max-w-lg">
-              {t("hero-description")}
-            </p>
+          {/* Description */}
+          <p
+            className="fu-2 leading-relaxed mb-9 max-w-[520px] mx-auto"
+            style={{ fontSize: "1.0625rem", color: "#7a93ad" }}
+          >
+            {t("hero-description")}
+          </p>
 
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-3 mb-6">
-              <Link
-                href="#examples"
-                className="btn-primary text-[15px] px-7 py-3.5"
-              >
-                {t("hero-cta-primary")}
-              </Link>
-              <Link
-                href="#contact"
-                className="btn-secondary text-[15px] px-7 py-3.5"
-              >
-                {t("hero-cta-secondary")}
-              </Link>
-            </div>
-          </div>
-
-          {/* ── Right: clickable live browser mockup ── */}
-          <div className="relative hidden md:block">
-            {/* Glow */}
-            <div
-              aria-hidden
-              className="absolute -inset-6 rounded-3xl opacity-30 pointer-events-none"
+          {/* CTAs */}
+          <div className="fu-3 flex flex-col sm:flex-row gap-3 justify-center items-center mb-8">
+            <Link
+              href="#examples"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-[15px] font-semibold rounded-xl text-white transition-all duration-200 hover:-translate-y-px hover:shadow-2xl"
               style={{
                 background:
-                  "radial-gradient(ellipse at 60% 40%, #dbeafe 0%, transparent 65%)",
+                  "linear-gradient(135deg, #3b82f6 0%, #2563eb 60%, #1d4ed8 100%)",
+                boxShadow:
+                  "0 1px 0 rgba(255,255,255,0.12) inset, 0 4px 20px rgba(37,99,235,0.42)",
               }}
-            />
-
-            {/* The whole card is a link to the live site */}
-            <a
-              href="https://renovapro.webuild.ge"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative block rounded-2xl border border-slate-200 shadow-2xl shadow-slate-200/60 overflow-hidden bg-white cursor-pointer"
-              onMouseEnter={() => setPreviewHovered(true)}
-              onMouseLeave={() => setPreviewHovered(false)}
-              aria-label="Visit live renovation website"
             >
-              {/* Browser chrome */}
-              <div className="flex items-center gap-1.5 px-4 py-3 bg-slate-100 border-b border-slate-200">
-                <span className="w-3 h-3 rounded-full bg-red-400" />
-                <span className="w-3 h-3 rounded-full bg-amber-400" />
-                <span className="w-3 h-3 rounded-full bg-green-400" />
-                <div className="flex-1 mx-4 bg-white border border-slate-200 rounded-md px-3 py-1 text-[11px] text-slate-400 flex items-center gap-1.5">
-                  <svg
-                    className="w-3 h-3 text-slate-300 shrink-0"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    strokeWidth={2}
+              {t("hero-cta-primary")}
+              <svg
+                className="w-3.5 h-3.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                strokeWidth={2.5}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
+            <Link
+              href="#contact"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-[15px] font-semibold rounded-xl transition-all duration-200 hover:bg-white/10"
+              style={{
+                background: "rgba(255,255,255,0.05)",
+                border: "1px solid rgba(255,255,255,0.11)",
+                color: "#94a3b8",
+              }}
+            >
+              {t("hero-cta-secondary")}
+            </Link>
+          </div>
+
+          {/* Trust strip */}
+          <div className="fu-4 flex flex-nowrap justify-center gap-x-7">
+            {trustItems.map((item, i) => (
+              <span
+                key={i}
+                className="flex items-center gap-2 text-[14px] font-medium whitespace-nowrap"
+                style={{ color: "#5a7a9a" }}
+              >
+                <svg
+                  className="w-3.5 h-3.5 shrink-0"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                >
+                  <circle cx="6" cy="6" r="5.5" stroke="rgba(37,99,235,0.45)" />
+                  <path
+                    d="M3.5 6l1.8 1.8L8.5 4.5"
+                    stroke="#3b82f6"
+                    strokeWidth="1.3"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                  >
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                  </svg>
-                  renovapro.webuild.ge
-                </div>
-              </div>
-
-              {/* Screenshot - pans topbottom via inline style (guaranteed to work) */}
-              <div className="relative h-[340px] lg:h-[400px] overflow-hidden bg-slate-50">
-                <Image
-                  src="/assets/images/renovation-desktop.png"
-                  alt="Renovation website built by webuild.ge"
-                  fill
-                  className="object-cover"
-                  style={{
-                    objectPosition: previewHovered ? "50% 100%" : "50% 0%",
-                    transition: "object-position 4500ms ease-in-out",
-                  }}
-                  sizes="(max-width: 768px) 0px, 50vw"
-                  priority
-                />
-
-                {/* Visit overlay - appears on hover */}
-                <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/20 transition-colors duration-300 flex items-end justify-center pb-5">
-                  <div className="translate-y-2 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center gap-1.5 px-4 py-2 bg-white rounded-full shadow-lg text-[12px] font-semibold text-slate-800">
-                    <svg
-                      className="w-3.5 h-3.5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      strokeWidth={2.5}
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
-                      <polyline points="15 3 21 3 21 9" />
-                      <line x1="10" y1="14" x2="21" y2="3" />
-                    </svg>
-                    Visit live site
-                  </div>
-                </div>
-              </div>
-            </a>
-
-            {/* "Live" badge */}
-            <div className="absolute -top-3 -right-3 z-10 flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-full shadow-sm pointer-events-none">
-              <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
-              <span className="text-[11px] font-semibold text-slate-700">
-                Live site
+                  />
+                </svg>
+                {item}
               </span>
-            </div>
+            ))}
           </div>
         </div>
+      </div>
 
-        {/* ── Stats bar ── */}
-        <div className="grid grid-cols-3 gap-px bg-slate-200 rounded-xl overflow-hidden border border-slate-200 mb-14 md:mb-20">
-          <Stat
-            value={t("hero-stat-price")}
-            label={t("hero-stat-price-label")}
-          />
-          <Stat value={t("hero-stat-time")} label={t("hero-stat-time-label")} />
-          <Stat
-            value={t("hero-stat-contact")}
-            label={t("hero-stat-contact-label")}
-          />
-        </div>
+      {/* ── Scroll indicator ── */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5">
+        <span
+          className="text-[11px] font-medium tracking-widest uppercase"
+          style={{ color: "rgba(255,255,255,0.18)" }}
+        >
+          scroll
+        </span>
+        <svg
+          className="w-4 h-4"
+          style={{
+            animation: "scroll-cue 1.8s ease-in-out infinite",
+            color: "rgba(255,255,255,0.3)",
+          }}
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          strokeWidth={2}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M6 9l6 6 6-6" />
+        </svg>
       </div>
     </section>
-  );
-}
-
-function Stat({ value, label }: StatProps) {
-  return (
-    <div className="bg-white px-4 py-5 text-center">
-      <div className="text-2xl md:text-3xl font-bold text-slate-900 mb-0.5 tracking-tight">
-        {value}
-      </div>
-      <div className="text-xs md:text-sm text-slate-500 font-medium">
-        {label}
-      </div>
-    </div>
   );
 }
