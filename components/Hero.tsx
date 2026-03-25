@@ -119,14 +119,14 @@ export default function Hero() {
       />
 
       {/* ── Content ── */}
-      <div className="container-lg relative flex-1 flex flex-col items-center justify-center pt-24 pb-28">
+      <div className="container-lg relative flex-1 flex flex-col items-center justify-center pt-20 pb-24 sm:pt-24 sm:pb-28">
         <div className="max-w-[900px] mx-auto text-center">
           {/* Headline */}
           <h1
             className="fu-1 font-bold tracking-tight mb-5"
             style={{
-              fontSize: "clamp(2.4rem, 6vw, 4.25rem)",
-              lineHeight: 1.08,
+              fontSize: "clamp(2rem, 7vw, 4.25rem)",
+              lineHeight: 1.1,
               color: "#f1f5f9",
               letterSpacing: "-0.025em",
             }}
@@ -148,17 +148,17 @@ export default function Hero() {
 
           {/* Description */}
           <p
-            className="fu-2 leading-relaxed mb-9 max-w-[520px] mx-auto"
-            style={{ fontSize: "1.0625rem", color: "#7a93ad" }}
+            className="fu-2 leading-relaxed mb-9 max-w-[520px] mx-auto text-[15px] sm:text-[17px]"
+            style={{ color: "#7a93ad" }}
           >
             {t("hero-description")}
           </p>
 
           {/* CTAs */}
-          <div className="fu-3 flex flex-col sm:flex-row gap-3 justify-center items-center mb-8">
+          <div className="fu-3 flex flex-col sm:flex-row gap-3 justify-center items-center mb-8 w-full sm:w-auto px-4 sm:px-0">
             <Link
               href="#examples"
-              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-[15px] font-semibold rounded-xl text-white transition-all duration-200 hover:-translate-y-px hover:shadow-2xl"
+              className="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-7 py-3.5 text-[15px] font-semibold rounded-xl text-white transition-all duration-200 hover:-translate-y-px hover:shadow-2xl"
               style={{
                 background:
                   "linear-gradient(135deg, #3b82f6 0%, #2563eb 60%, #1d4ed8 100%)",
@@ -181,7 +181,7 @@ export default function Hero() {
             </Link>
             <Link
               href="#contact"
-              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-[15px] font-semibold rounded-xl transition-all duration-200 hover:bg-white/10"
+              className="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-7 py-3.5 text-[15px] font-semibold rounded-xl transition-all duration-200 hover:bg-white/10"
               style={{
                 background: "rgba(255,255,255,0.05)",
                 border: "1px solid rgba(255,255,255,0.11)",
@@ -193,11 +193,11 @@ export default function Hero() {
           </div>
 
           {/* Trust strip */}
-          <div className="fu-4 flex flex-nowrap justify-center gap-x-7">
+          <div className="fu-4 flex flex-wrap justify-center gap-x-6 gap-y-2.5">
             {trustItems.map((item, i) => (
               <span
                 key={i}
-                className="flex items-center gap-2 text-[14px] font-medium whitespace-nowrap"
+                className="flex items-center gap-2 text-[13px] sm:text-[14px] font-medium"
                 style={{ color: "#5a7a9a" }}
               >
                 <svg
