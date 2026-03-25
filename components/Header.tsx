@@ -180,7 +180,7 @@ export default function Header() {
           style={{
             background: "linear-gradient(180deg, #070e1d 0%, #0b1729 55%, #070e1d 100%)",
             borderLeft: "1px solid rgba(255,255,255,0.07)",
-            boxShadow: "-32px 0 80px rgba(0,0,0,0.75)",
+            boxShadow: isMobileMenuOpen ? "-32px 0 80px rgba(0,0,0,0.75)" : "none",
           }}
         >
           {/* Top ambient glow */}
