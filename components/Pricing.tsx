@@ -186,7 +186,7 @@ export default function Pricing() {
               className="text-lg font-medium line-through mb-1"
               style={{ color: "#334155" }}
             >
-              1 200 {t("pricing-currency")}
+              999 {t("pricing-currency")}
             </p>
 
             {/* Main price */}
@@ -195,7 +195,7 @@ export default function Pricing() {
                 className="font-extrabold leading-none tracking-tight"
                 style={{ fontSize: "clamp(4rem, 9vw, 6rem)", color: "#f1f5f9" }}
               >
-                600
+                499
               </span>
               <span
                 className="text-2xl font-semibold mb-2"
