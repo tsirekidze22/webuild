@@ -2,15 +2,25 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 
 import { Metadata } from "next";
+import { buildAlternates } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy | Webuild",
-  description: "Privacy policy and data protection information for Webuild.",
-  robots: {
-    index: false,
-    follow: true,
-  },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  return {
+    title: "Privacy Policy | Webuild",
+    description: "Privacy policy and data protection information for Webuild.",
+    robots: {
+      index: false,
+      follow: true,
+    },
+    alternates: buildAlternates(locale, "privacy-policy"),
+  };
+}
 
 export default function PrivacyPolicy() {
   const t = useTranslations("privacyPolicy");

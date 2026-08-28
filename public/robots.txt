@@ -2,7 +2,6 @@
 
 User-agent: *
 Disallow: /api/
-Disallow: /_next/
 Allow: /
 
 Sitemap: https://webuild.ge/sitemap.xml

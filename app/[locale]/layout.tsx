@@ -8,6 +8,7 @@ import "../globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import LoadingScreen from "@/components/LoadingScreen";
+import { buildAlternates } from "@/lib/seo";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -28,27 +29,39 @@ export async function generateMetadata({
   const t = await getTranslations("mainMetadata");
   const baseUrl = "https://webuild.ge";
 
-  // JSON-LD for Organization
+  const pageUrl = locale === "ka" ? baseUrl : `${baseUrl}/en`;
+
   const organizationJSON = {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Webuild.ge",
     url: baseUrl,
-    logo: `${baseUrl}/assets/image/logo.png`,
-    sameAs: [],
+    logo: `${baseUrl}/assets/images/logo.png`,
+    sameAs: [
+      "https://www.facebook.com/webuildge",
+      "https://www.instagram.com/webuildge",
+      "https://www.linkedin.com/company/webuildge",
+    ],
   };
 
-  // JSON-LD Breadcrumb
-  const breadcrumbJSON = {
+  const localBusinessJSON = {
     "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: locale === "ka" ? baseUrl : `${baseUrl}/${locale}`,
-      },
+    "@type": "LocalBusiness",
+    name: "Webuild.ge",
+    url: baseUrl,
+    logo: `${baseUrl}/assets/images/logo.png`,
+    telephone: "+995555799369",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Mikheil Abramishvili Str",
+      addressLocality: "Tbilisi",
+      postalCode: "0144",
+      addressCountry: "GE",
+    },
+    sameAs: [
+      "https://www.facebook.com/webuildge",
+      "https://www.instagram.com/webuildge",
+      "https://www.linkedin.com/company/webuildge",
     ],
   };
 
@@ -61,7 +74,7 @@ export async function generateMetadata({
     openGraph: {
       title: t("og-title"),
       description: t("og-description"),
-      url: `${baseUrl}/${locale}`,
+      url: pageUrl,
       siteName: "Webuild.ge",
       images: [
         {
@@ -80,13 +93,7 @@ export async function generateMetadata({
       images: [`${baseUrl}/assets/images/og-image.jpg`],
       creator: "@webuildge",
     },
-    alternates: {
-      canonical: locale === "ka" ? baseUrl : `${baseUrl}/${locale}`,
-      languages: {
-        en: `${baseUrl}/en`,
-        ka: baseUrl,
-      },
-    },
+    alternates: buildAlternates(locale),
     metadataBase: new URL(baseUrl),
     other: [
       {
@@ -95,7 +102,7 @@ export async function generateMetadata({
       },
       {
         type: "application/ld+json",
-        children: JSON.stringify(breadcrumbJSON),
+        children: JSON.stringify(localBusinessJSON),
       },
     ],
     icons: {
@@ -125,37 +132,6 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <head>
-        <title>ციფრული გადაწყვეტილებები თქვენი ბიზნესის ზრდისთვის</title>
-
-        {/* Local Business Schema */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "LocalBusiness",
-              name: "Webuild.ge",
-              url: "https://webuild.ge",
-              logo: "https://webuild.ge/logo.png",
-              telephone: "+995555799369",
-              // email: "hello@webuild.ge",
-              address: {
-                "@type": "PostalAddress",
-                streetAddress: "Mikheil Abramishvili Str",
-                addressLocality: "Tbilisi",
-                postalCode: "0144",
-                addressCountry: "GE",
-              },
-              sameAs: [
-                "https://www.facebook.com/webuildge",
-                "https://www.instagram.com/webuildge",
-                "https://www.linkedin.com/company/webuildge",
-              ],
-            }),
-          }}
-        />
-      </head>
       <body className={locale === "ka" ? noto.className : inter.className}>
         <NextIntlClientProvider messages={messages}>
           <LoadingScreen />

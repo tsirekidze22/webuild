@@ -2,16 +2,26 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 
 import { Metadata } from "next";
+import { buildAlternates } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Terms & Conditions | Webuild",
-  description:
-    "Terms and conditions governing the use of the Webuild website and services.",
-  robots: {
-    index: false,
-    follow: true,
-  },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  return {
+    title: "Terms & Conditions | Webuild",
+    description:
+      "Terms and conditions governing the use of the Webuild website and services.",
+    robots: {
+      index: false,
+      follow: true,
+    },
+    alternates: buildAlternates(locale, "terms"),
+  };
+}
 
 export default function Terms() {
   const t = useTranslations("terms");

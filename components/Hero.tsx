@@ -2,7 +2,6 @@
 
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import Image from "next/image";
 
 export default function Hero() {
   const t = useTranslations("hero");
@@ -53,16 +52,6 @@ export default function Hero() {
         .fu-3 { animation: fade-up 0.75s cubic-bezier(0.22,1,0.36,1) 0.42s both; }
         .fu-4 { animation: fade-up 0.75s cubic-bezier(0.22,1,0.36,1) 0.52s both; }
       `}</style>
-
-      {/* SEO preload */}
-      <Image
-        src="/assets/images/og-image.jpg"
-        alt="Webuild.ge - Web Development for Businesses"
-        width={1200}
-        height={630}
-        className="hidden"
-        priority
-      />
 
       {/* ── Animated orbs ── */}
       <div
